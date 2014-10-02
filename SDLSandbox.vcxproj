@@ -95,7 +95,7 @@
       <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2_image.lib</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -131,24 +131,29 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\lib\x64;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\lib\x64</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib</AdditionalDependencies>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="csurface.cpp" />
+    <ClCompile Include="Automotan.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Scout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="csurface.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Scout.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="bulbasaur.bmp" />
+    <Image Include="charizard.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

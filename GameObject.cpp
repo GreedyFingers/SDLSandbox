@@ -13,14 +13,16 @@ GameObject::~GameObject()
 }
 
 void GameObject::init(float x, float y, float sx, float sy, ObjectID type,
-						std::string texturePath, SDL_Surface *screen)
+	std::string texturePath, SDL_Surface *screen, int spritestart = 0, int spriteend = 0 )
 {
 	_x = x;
 	_y = y;
+	_spritestart = spritestart;
+	_spriteend = spriteend;
 	_sx = sx;
 	_sy = sy;
 	_type = type;
-	_texture = CSurface::onLoad(texturePath);
+	_texture = CSurface::onLoad(screen,texturePath);
 	_screen = screen;
 	_remove = false;
 }
@@ -37,7 +39,7 @@ void GameObject::update()
 
 void GameObject::render()
 {
-	if (CSurface::onDraw(_texture, _screen, _x, _y, 0, 0, _sx, _sy) == false)
+	if (CSurface::onDraw(_texture, _screen, _x, _y, _spritestart, 0, _sx, _sy) == false)
 		_remove = true;
 }
 

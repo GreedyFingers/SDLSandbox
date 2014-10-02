@@ -1,12 +1,23 @@
 #include "csurface.h"
 
-SDL_Surface* CSurface::onLoad(std::string fileName)
+SDL_Surface* CSurface::onLoad(SDL_Surface* screen, std::string fileName)
 {
-	SDL_Surface *tempSurface;
+	SDL_Surface *tempSurface = NULL;
+	SDL_Surface *finalSurface = NULL;
 	tempSurface = IMG_Load(fileName.c_str());
 	if (tempSurface == NULL)
+	{
+		printf("Unable to load image %s. SDL_Error: %s\n\n", fileName.c_str(), SDL_GetError());
 		return NULL;
-	return tempSurface;
+	}
+	else
+	{
+		finalSurface = SDL_ConvertSurface(tempSurface, screen->format, NULL);
+		if (finalSurface == NULL)
+			printf("unable to optimize image %s. SDL Error: %s\n", fileName.c_str(), SDL_GetError());
+		SDL_FreeSurface(tempSurface);
+	}
+	return finalSurface;
 }
 
 bool CSurface::onDraw(SDL_Surface *src, SDL_Surface *dest, int destX, int destY)

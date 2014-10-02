@@ -7,7 +7,7 @@
 class CSurface
 {
 public:
-	static SDL_Surface* onLoad(std::string fileName);
+	static SDL_Surface* onLoad(SDL_Surface* screen,std::string fileName);
 	static bool onDraw(SDL_Surface* src, SDL_Surface *dest, int destX,
 						int destY);
 	static bool onDraw(SDL_Surface* src, SDL_Surface *dest, int destX,

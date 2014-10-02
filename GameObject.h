@@ -15,6 +15,7 @@ class GameObject
 	protected:
 		float _x, _y;
 		float _sx, _sy;
+		float _spritestart, _spriteend;
 		SDL_Surface* _texture;
 
 	public:
@@ -23,7 +24,7 @@ class GameObject
 
 		virtual void input();
 		virtual void update();
-		void init(float, float, float, float, ObjectID, std::string, SDL_Surface *screen);
+		void init(float, float, float, float, ObjectID, std::string, SDL_Surface *screen, int, int);
 		virtual void render();
 		float getX();
 		float getY();

@@ -3,12 +3,19 @@
 #include "Game.h"
 #include "GameObject.h"
 #include "Player.h"
+#include "Scout.h"
 
-Game::Game(SDL_Window *window)
+Game::Game(SDL_Surface *screen)
 {
-	_screen = SDL_GetWindowSurface(window);
-	Player *player = new Player((float)_screen->w / 2, (float)_screen->h - 50, _screen);
+	_screen = screen;
+	Player *player = new Player((float)screen->w / 2, (float)screen->h - 50, screen);
+	Scout *scout1 = new Scout((float)screen->w * 1 / 4, (float)screen->h - 200, screen);
+	Scout *scout2 = new Scout((float)screen->w * 2 / 4, (float)screen->h - 200, screen);
+	Scout *scout3 = new Scout((float)screen->w * 3 / 4, (float)screen->h - 200, screen);
 	_objects.push_back(player);
+	_objects.push_back(scout1);
+	_objects.push_back(scout2);
+	_objects.push_back(scout3);
 }
 
 Game::~Game()
