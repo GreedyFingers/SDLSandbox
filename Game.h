@@ -12,7 +12,7 @@ class Game
 	SDL_Surface* _screen;
 
 public:
-	Game(SDL_Surface*);
+	Game(SDL_Renderer*);
 	~Game();
 
 	void gameLoop();

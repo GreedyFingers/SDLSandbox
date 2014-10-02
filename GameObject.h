@@ -10,13 +10,13 @@ class GameObject
 		static enum ObjectID { player };
 	private:
 		ObjectID _type;
-		SDL_Surface* _screen;
+		SDL_Renderer* _renderer;
 		bool _remove;
 	protected:
 		float _x, _y;
-		float _sx, _sy;
-		float _spritestart, _spriteend;
-		SDL_Surface* _texture;
+		int _sx, _sy;
+		int _spritestart, _spriteend;
+		SDL_Texture* _texture;
 
 	public:
 		GameObject();
@@ -24,12 +24,13 @@ class GameObject
 
 		virtual void input();
 		virtual void update();
-		void init(float, float, float, float, ObjectID, std::string, SDL_Surface *screen, int, int);
+		void init(float, float, int, int, ObjectID, std::string, SDL_Renderer*, int, int);
 		virtual void render();
 		float getX();
 		float getY();
-		float getSX();
-		float getSY();
+		int getSX();
+		int getSY();
+		SDL_Texture* getTexture();
 		ObjectID getType();
 };
 

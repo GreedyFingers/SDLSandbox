@@ -2,14 +2,13 @@
 #include <SDL_image.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "csurface.h"
 #include "Game.h"
 
 const static int SCREEN_WIDTH = 800;
 const static int SCREEN_HEIGHT = 600;
 
 SDL_Window* window = NULL;
-SDL_Surface* screen = NULL;
+SDL_Renderer* renderer = NULL;
 
 bool init()
 {
@@ -40,17 +39,25 @@ bool init()
 		}
 		else
 		{
-			//Initialize PNG loading
-			int imgFlags = IMG_INIT_PNG;
-			if (!(IMG_Init(imgFlags) & imgFlags))
+			//Create renderer for window
+			renderer = SDL_CreateRenderer(window,-1, SDL_RENDERER_ACCELERATED);
+			if (renderer == NULL)
 			{
-				printf("SDL_image could not initialize. SDL_image Error: %s\n", IMG_GetError());
+				printf("Renderer could not be created. SDL Error: %s\n", SDL_GetError());
 				success = false;
 			}
 			else
 			{
-				//Get window surface
-				screen = SDL_GetWindowSurface(window);
+				//Initialize renderer color
+				SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xFF);
+
+				//Initialize PNG loading
+				int imgFlags = IMG_INIT_PNG;
+				if (!(IMG_Init(imgFlags) & imgFlags))
+				{
+					printf("SDL_image could not initialize. SDL_image Error: %s\n", IMG_GetError());
+					success = false;
+				}
 			}
 		}
 	}
@@ -61,13 +68,14 @@ bool init()
 void close()
 {
 	//Deallocate surface
-	SDL_FreeSurface(screen);
-	screen = NULL;
+	SDL_DestroyRenderer(renderer);
+	renderer = NULL;
 
 	//Deallocate window
 	SDL_DestroyWindow(window);
 	window = NULL;
 
+	IMG_Quit();
 	SDL_Quit();
 
 }
@@ -81,7 +89,7 @@ int main(int argc, char *argv[])
 
 	SDL_Event e;
 
-	Game game(screen);
+	Game game(renderer);
 
 	bool quit = false;
 	while (!quit)
@@ -93,9 +101,11 @@ int main(int argc, char *argv[])
 				quit = true;
 		}
 
+		SDL_RenderClear(renderer);
+		
 		game.gameLoop();
 
-		SDL_UpdateWindowSurface(window);
+		SDL_RenderPresent(renderer);
 
 		SDL_Delay(30);
 

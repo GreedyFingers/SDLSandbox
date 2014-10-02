@@ -1,5 +1,7 @@
+#pragma once
+
 #include "GameObject.h"
-#include "csurface.h"
+#include "Draw.h"
 
 
 GameObject::GameObject()
@@ -9,11 +11,11 @@ GameObject::GameObject()
 
 GameObject::~GameObject()
 {
-	delete _texture;
+	SDL_DestroyTexture(_texture);
 }
 
-void GameObject::init(float x, float y, float sx, float sy, ObjectID type,
-	std::string texturePath, SDL_Surface *screen, int spritestart = 0, int spriteend = 0 )
+void GameObject::init(float x, float y, int sx, int sy, ObjectID type,
+	std::string texturePath, SDL_Renderer *renderer, int spritestart = 0, int spriteend = 0 )
 {
 	_x = x;
 	_y = y;
@@ -22,8 +24,8 @@ void GameObject::init(float x, float y, float sx, float sy, ObjectID type,
 	_sx = sx;
 	_sy = sy;
 	_type = type;
-	_texture = CSurface::onLoad(screen,texturePath);
-	_screen = screen;
+	_texture = Draw::loadTexture(renderer, texturePath);
+	_renderer = renderer;
 	_remove = false;
 }
 
@@ -39,7 +41,7 @@ void GameObject::update()
 
 void GameObject::render()
 {
-	if (CSurface::onDraw(_texture, _screen, _x, _y, _spritestart, 0, _sx, _sy) == false)
+	if (Draw::draw(_renderer, _texture, _x, _y, _spritestart, 0, _sx, _sy) == false)
 		_remove = true;
 }
 
@@ -53,12 +55,17 @@ float GameObject::getY()
 	return _y;
 }
 
-float GameObject::getSX()
+int GameObject::getSX()
 {
 	return _sx;
 }
 
-float GameObject::getSY()
+int GameObject::getSY()
 {
 	return _sy;
+}
+
+SDL_Texture* GameObject::getTexture()
+{
+	return _texture;
 }

@@ -135,7 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="csurface.cpp" />
+    <ClCompile Include="draw.cpp" />
     <ClCompile Include="Automotan.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -144,7 +144,7 @@
     <ClCompile Include="Scout.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="csurface.h" />
+    <ClInclude Include="draw.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />

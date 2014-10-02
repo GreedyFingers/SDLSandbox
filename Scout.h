@@ -7,7 +7,7 @@ class Scout : public Enemy
 	const int _textureSizeY = 30;
 	const int _spritestart = 64;
 public:
-	Scout(float, float, SDL_Surface*);
+	Scout(float, float, SDL_Renderer*);
 	~Scout();
 };
 
