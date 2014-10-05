@@ -1,11 +1,11 @@
-#include "Enemy.h"
+#include "Automotan.h"
 
 
-Enemy::Enemy()
+Automotan::Automotan()
 {
 }
 
 
-Enemy::~Enemy()
+Automotan::~Automotan()
 {
 }

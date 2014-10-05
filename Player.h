@@ -9,7 +9,7 @@ class Player : public GameObject
 	const int _textureSizeX = 32;
 	const int _textureSizeY = 30;
 public:
-	Player(float, float, SDL_Renderer*);
+	Player(int, int, SDL_Renderer*);
 	~Player();
 
 };

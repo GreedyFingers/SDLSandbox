@@ -101,6 +101,8 @@ int main(int argc, char *argv[])
 				quit = true;
 		}
 
+		SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
 		SDL_RenderClear(renderer);
 		
 		game.gameLoop();

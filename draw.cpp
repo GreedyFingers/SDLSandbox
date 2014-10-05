@@ -23,7 +23,7 @@ SDL_Texture* Draw::loadTexture(SDL_Renderer* renderer, std::string fileName)
 	return newTexture;
 }
 
-bool Draw::draw(SDL_Renderer *renderer, SDL_Texture *texture, float rendX, float rendY,
+bool Draw::draw(SDL_Renderer *renderer, SDL_Texture *texture, int rendX, int rendY,
 						int texX, int texY, int width, int height)
 {
 	if (texture == NULL || renderer == NULL)
@@ -49,4 +49,12 @@ bool Draw::setTransparentColor(SDL_Surface *target, int R, int G, int B)
 	SDL_SetColorKey(target, SDL_TRUE | SDL_RLEACCEL,
 		SDL_MapRGB(target->format, R, G, B));
 	return true;
+}
+
+void Draw::drawRect(SDL_Renderer* renderer, int x, int y, int rw, int rh,
+						Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+{
+	SDL_Rect fillRect = { x, y, rw, rh };
+	SDL_SetRenderDrawColor(renderer, r, g, b, a);
+	SDL_RenderFillRect(renderer, &fillRect);
 }

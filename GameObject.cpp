@@ -14,11 +14,11 @@ GameObject::~GameObject()
 	SDL_DestroyTexture(_texture);
 }
 
-void GameObject::init(float x, float y, int sx, int sy, ObjectID type,
+void GameObject::init(int x, int y, int sx, int sy, ObjectID type,
 	std::string texturePath, SDL_Renderer *renderer, int spritestart = 0, int spriteend = 0 )
 {
-	_x = x;
-	_y = y;
+	_x = (int)x;
+	_y = (int)y;
 	_spritestart = spritestart;
 	_spriteend = spriteend;
 	_sx = sx;
@@ -45,12 +45,12 @@ void GameObject::render()
 		_remove = true;
 }
 
-float GameObject::getX()
+int GameObject::getX()
 {
 	return _x;
 }
 
-float GameObject::getY()
+int GameObject::getY()
 {
 	return _y;
 }
