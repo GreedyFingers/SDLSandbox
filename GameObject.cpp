@@ -11,21 +11,17 @@ GameObject::GameObject()
 
 GameObject::~GameObject()
 {
-	SDL_DestroyTexture(_texture);
 }
 
-void GameObject::init(int x, int y, int sx, int sy, ObjectID type,
-	std::string texturePath, SDL_Renderer *renderer, int spritestart = 0, int spriteend = 0 )
+void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type,
+	std::string texturePath, int spritestart = 0, int spriteend = 0 )
 {
 	_x = (int)x;
 	_y = (int)y;
 	_spritestart = spritestart;
 	_spriteend = spriteend;
-	_sx = sx;
-	_sy = sy;
 	_type = type;
-	_texture = Draw::loadTexture(renderer, texturePath);
-	_renderer = renderer;
+	_texture = new Texture(renderer,texturePath);
 	_remove = false;
 }
 
@@ -39,9 +35,9 @@ void GameObject::update()
 
 }
 
-void GameObject::render()
+void GameObject::render(SDL_Renderer* renderer)
 {
-	if (Draw::draw(_renderer, _texture, _x, _y, _spritestart, 0, _sx, _sy) == false)
+	if (_texture->render(renderer,_x, _y, _sx, _sy, _spritestart))
 		_remove = true;
 }
 
@@ -65,7 +61,7 @@ int GameObject::getSY()
 	return _sy;
 }
 
-SDL_Texture* GameObject::getTexture()
+Texture* GameObject::getTexture()
 {
 	return _texture;
 }

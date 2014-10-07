@@ -10,12 +10,12 @@ Game::Game(SDL_Renderer *renderer)
 {
 	int rw;
 	int rh;
+	_renderer = renderer;
 	SDL_GetRendererOutputSize(renderer,&rw,&rh);
-	Player *player = new Player(rw / 2, rh - 50, renderer);
-	Scout *scout1 = new Scout(50, 50, renderer);
-	Scout *scout2 = new Scout(rw * 2 / 4, rh - 200, renderer);
-	Scout *scout3 = new Scout(rw * 3 / 4, rh - 200, renderer);
-	Scout *scout4 = new Scout(rw * 3 / 4, rh - 300, renderer);
+	Player *player = new Player(renderer, rw / 2, rh - 50);
+	Scout *scout1 = new Scout(renderer, rw * 1 / 4, rh - 200);
+	Scout *scout2 = new Scout(renderer, rw * 2 / 4, rh - 200);
+	Scout *scout3 = new Scout(renderer, rw * 3 / 4, rh - 200);
 	UnitControl *control1 = new UnitControl(renderer, rw, rh);
 	_objects.push_back(player);
 	_objects.push_back(scout1);
@@ -29,13 +29,13 @@ Game::~Game()
 	_objects.clear();
 }
 
-void Game::gameLoop()
+void Game::gameLoop(SDL_Renderer* renderer)
 {
 	for_each(_objects.begin(), _objects.end(), std::bind1st(std::mem_fun(&Game::input),this));
 
-	for_each(_objects.begin(), _objects.end(), std::bind1st(std::mem_fun(&Game::update), this));;
+	for_each(_objects.begin(), _objects.end(), std::bind1st(std::mem_fun(&Game::update), this));
 
-	for_each(_objects.begin(), _objects.end(), std::bind1st(std::mem_fun(&Game::render), this));;
+	for_each(_objects.begin(), _objects.end(), std::bind1st(std::mem_fun(&Game::render), this));
 }
 
 void Game::input(GameObject* object)
@@ -50,7 +50,7 @@ void Game::update(GameObject* object)
 
 void Game::render(GameObject* object)
 {
-	object->render();
+	object->render(_renderer);
 }
 
 void Game::detectCollisions()

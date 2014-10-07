@@ -2,35 +2,48 @@
 
 #include <SDL.h>
 #include <string>
+#include "Texture.h"
 
 class GameObject
 {
 	//members
-	public: 
+	public:
+		//list GameObject types
 		static enum ObjectID { player };
 	private:
+		//this object's type
 		ObjectID _type;
+
+		//flag to remove
 		bool _remove;
+
 	protected:
+
+		//Texture information
+		Texture* _texture;
 		int _x, _y;
 		int _sx, _sy;
 		int _spritestart, _spriteend;
-		SDL_Texture* _texture;
-		SDL_Renderer* _renderer;
 
 	public:
 		GameObject();
 		~GameObject();
 
+		//Game logic members
 		virtual void input();
 		virtual void update();
-		virtual void render();
-		void init(int, int, int, int, ObjectID, std::string, SDL_Renderer*, int, int);
+		virtual void render(SDL_Renderer* renderer);
+
+		//initialize object
+		void init(SDL_Renderer* renderer,int x, int y, ObjectID type, 
+					std::string texturePath, int spriteStart, int spriteEnd);
+
+		//getters
 		int getX();
 		int getY();
 		int getSX();
 		int getSY();
-		SDL_Texture* getTexture();
+		Texture* getTexture();
 		ObjectID getType();
 };
 

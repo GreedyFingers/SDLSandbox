@@ -4,9 +4,11 @@
 #include <stdio.h>
 #include "Game.h"
 
+//Game constants
 const static int SCREEN_WIDTH = 800;
 const static int SCREEN_HEIGHT = 600;
 
+//SDL window handles
 SDL_Window* window = NULL;
 SDL_Renderer* renderer = NULL;
 
@@ -21,9 +23,10 @@ bool init()
 		printf("SDL could not initialize. SDL_Error: %s\n", SDL_GetError());
 		success = false;
 	}
+	//SDL_Init succeeded
 	else
 	{
-
+		//Window creation
 		window = SDL_CreateWindow(
 			"Tutorial",
 			SDL_WINDOWPOS_UNDEFINED,
@@ -37,6 +40,7 @@ bool init()
 			printf("Window could not be created. SDL_Error: %s\n", SDL_GetError());
 			success = false;
 		}
+		//SDL_CreateWindow succeeded
 		else
 		{
 			//Create renderer for window
@@ -46,6 +50,7 @@ bool init()
 				printf("Renderer could not be created. SDL Error: %s\n", SDL_GetError());
 				success = false;
 			}
+			//SDL_CreateRenderer succeeded
 			else
 			{
 				//Initialize renderer color
@@ -87,28 +92,33 @@ int main(int argc, char *argv[])
 	if (!init())
 		printf("Failed to initialize.\n");
 
+	//TODO: rewrite as an adapter class
 	SDL_Event e;
 
+	//Create main game class
 	Game game(renderer);
 
+	//Game loop
 	bool quit = false;
 	while (!quit)
 	{
-
+		//process all inputs
 		while (SDL_PollEvent(&e) != 0)
 		{
 			if (e.type == SDL_QUIT)
 				quit = true;
 		}
 
-		SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+		SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xFF);
 
 		SDL_RenderClear(renderer);
 		
-		game.gameLoop();
+		//Main game processing (input, update, render)
+		game.gameLoop(renderer);
 
 		SDL_RenderPresent(renderer);
 
+		//wait about 1/60 of a second
 		SDL_Delay(30);
 
 	}

@@ -1,9 +1,11 @@
 #include "Player.h"
 
 
-Player::Player(int x, int y, SDL_Renderer* renderer)
+Player::Player(SDL_Renderer* renderer,int x, int y)
 {
-	init(x, y, _textureSizeX, _textureSizeY, GameObject::player, _texturePath, renderer, 0, 0);
+	_sx = _textureSizeX;
+	_sy = _textureSizeY;
+	init(renderer, x, y,GameObject::player, _texturePath, 0, 0);
 }
 
 

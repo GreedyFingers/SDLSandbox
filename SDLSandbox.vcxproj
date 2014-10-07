@@ -144,6 +144,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scout.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="UnitControl.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,11 +154,13 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scout.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="UnitControl.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="bulbasaur.bmp" />
     <Image Include="charizard.bmp" />
+    <Image Include="unitcontrol.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

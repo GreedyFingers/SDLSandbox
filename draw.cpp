@@ -50,11 +50,3 @@ bool Draw::setTransparentColor(SDL_Surface *target, int R, int G, int B)
 		SDL_MapRGB(target->format, R, G, B));
 	return true;
 }
-
-void Draw::drawRect(SDL_Renderer* renderer, int x, int y, int rw, int rh,
-						Uint8 r, Uint8 g, Uint8 b, Uint8 a)
-{
-	SDL_Rect fillRect = { x, y, rw, rh };
-	SDL_SetRenderDrawColor(renderer, r, g, b, a);
-	SDL_RenderFillRect(renderer, &fillRect);
-}

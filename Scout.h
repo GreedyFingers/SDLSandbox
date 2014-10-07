@@ -7,7 +7,7 @@ class Scout : public Automotan
 	const int _textureSizeY = 30;
 	const int _spritestart = 64;
 public:
-	Scout(int, int, SDL_Renderer*);
+	Scout(SDL_Renderer* renderer,int, int);
 	~Scout();
 };
 

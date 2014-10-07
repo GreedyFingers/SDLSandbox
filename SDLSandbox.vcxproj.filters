@@ -45,6 +45,9 @@
     <ClCompile Include="UnitControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -68,12 +71,18 @@
     <ClInclude Include="Automotan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="bulbasaur.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="charizard.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="unitcontrol.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
