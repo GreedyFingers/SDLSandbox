@@ -16,8 +16,8 @@ GameObject::~GameObject()
 void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type,
 	std::string texturePath, int spritestart = 0, int spriteend = 0 )
 {
-	_x = (int)x;
-	_y = (int)y;
+	_x = x;
+	_y = y;
 	_spritestart = spritestart;
 	_spriteend = spriteend;
 	_type = type;
@@ -32,7 +32,9 @@ void GameObject::input()
 
 void GameObject::update()
 {
-
+	int currentTime = SDL_GetTicks();
+	_timeSinceLastUpdate = currentTime - _lastUpdateTime;
+	_lastUpdateTime = currentTime;
 }
 
 void GameObject::render(SDL_Renderer* renderer)

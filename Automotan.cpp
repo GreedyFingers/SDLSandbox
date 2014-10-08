@@ -1,11 +1,11 @@
-#include "Automotan.h"
+#include "Automaton.h"
 
 
-Automotan::Automotan()
+Automaton::Automaton()
 {
 }
 
 
-Automotan::~Automotan()
+Automaton::~Automaton()
 {
 }

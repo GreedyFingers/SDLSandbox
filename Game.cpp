@@ -13,9 +13,9 @@ Game::Game(SDL_Renderer *renderer)
 	_renderer = renderer;
 	SDL_GetRendererOutputSize(renderer,&rw,&rh);
 	Player *player = new Player(renderer, rw / 2, rh - 50);
-	Scout *scout1 = new Scout(renderer, rw * 1 / 4, rh - 200);
-	Scout *scout2 = new Scout(renderer, rw * 2 / 4, rh - 200);
-	Scout *scout3 = new Scout(renderer, rw * 3 / 4, rh - 200);
+	Scout *scout1 = new Scout(renderer, rw * 1 / 4, rh - 300);
+	Scout *scout2 = new Scout(renderer, rw * 2 / 4, rh - 300);
+	Scout *scout3 = new Scout(renderer, rw * 3 / 4, rh - 300);
 	UnitControl *control1 = new UnitControl(renderer, rw, rh);
 	_objects.push_back(player);
 	_objects.push_back(scout1);

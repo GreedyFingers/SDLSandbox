@@ -25,6 +25,11 @@ class GameObject
 		int _sx, _sy;
 		int _spritestart, _spriteend;
 
+		int _lastUpdateTime;
+		int _timeSinceLastUpdate;
+
+		int _damping = 50;
+
 	public:
 		GameObject();
 		~GameObject();

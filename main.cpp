@@ -2,6 +2,7 @@
 #include <SDL_image.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <time.h>
 #include "Game.h"
 
 //Game constants
@@ -14,6 +15,9 @@ SDL_Renderer* renderer = NULL;
 
 bool init()
 {
+	//Init time
+	srand(time(0));
+
 	//Init flag
 	bool success = true;
 
