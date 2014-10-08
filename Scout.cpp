@@ -29,7 +29,6 @@ void Scout::update()
 			if (SDL_GetTicks() >= _nextActionTime)
 			{
 				Physics::ChooseRandomDirection(&_vx, &_vy);
-				printf("X:%f\nY:%f\n", _vx, _vy);
 				_nextActionTime += 500;
 				_currentState = State::moving;
 			}

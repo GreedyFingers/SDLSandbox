@@ -8,15 +8,22 @@
 
 Game::Game(SDL_Renderer *renderer)
 {
+	//renderer width and height, so that the GameObjects know where they will be drawing
 	int rw;
 	int rh;
 	_renderer = renderer;
 	SDL_GetRendererOutputSize(renderer,&rw,&rh);
+
+	//Make some objects for start of game
 	Player *player = new Player(renderer, rw / 2, rh - 50);
 	Scout *scout1 = new Scout(renderer, rw * 1 / 4, rh - 300);
 	Scout *scout2 = new Scout(renderer, rw * 2 / 4, rh - 300);
 	Scout *scout3 = new Scout(renderer, rw * 3 / 4, rh - 300);
+
+	//Menus
 	UnitControl *control1 = new UnitControl(renderer, rw, rh);
+
+	//push objects into vector
 	_objects.push_back(player);
 	_objects.push_back(scout1);
 	_objects.push_back(scout2);
@@ -29,7 +36,8 @@ Game::~Game()
 	_objects.clear();
 }
 
-void Game::gameLoop(SDL_Renderer* renderer)
+//Loop through vector of GameObjects and run the appropriate functions for each
+void Game::gameLoop()
 {
 	for_each(_objects.begin(), _objects.end(), std::bind1st(std::mem_fun(&Game::input),this));
 
@@ -51,9 +59,4 @@ void Game::update(GameObject* object)
 void Game::render(GameObject* object)
 {
 	object->render(_renderer);
-}
-
-void Game::detectCollisions()
-{
-
 }

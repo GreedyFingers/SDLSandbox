@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
 		SDL_RenderClear(renderer);
 		
 		//Main game processing (input, update, render)
-		game.gameLoop(renderer);
+		game.gameLoop();
 
 		SDL_RenderPresent(renderer);
 
