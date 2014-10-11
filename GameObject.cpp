@@ -13,18 +13,19 @@ GameObject::~GameObject()
 {
 }
 
-void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type,
-	std::string texturePath, int spritestart = 0, int spriteend = 0 )
+//initialize clips, object location, type, and texture
+void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type, std::string texturePath)
 {
-	//TODO: initialize _clips in derived classes
 
 	_x = x;
 	_y = y;
-	_spritestart = spritestart;
-	_spriteend = spriteend;
 	_type = type;
 	_texture = new Texture(renderer,texturePath);
+	_clips = (SDL_Rect*)malloc(sizeof(SDL_Rect));
+	_currentClip = _clips[0];
+
 	_remove = false;
+
 }
 
 void GameObject::input()
@@ -32,6 +33,7 @@ void GameObject::input()
 
 }
 
+//base update called to determine when this GameObject was last updated
 void GameObject::update()
 {
 	int currentTime = SDL_GetTicks();
@@ -39,12 +41,14 @@ void GameObject::update()
 	_lastUpdateTime = currentTime;
 }
 
+//render this object's texture with the current clip
 void GameObject::render(SDL_Renderer* renderer)
 {
 	if (_texture->render(renderer,_x, _y, &_currentClip))
 		_remove = true;
 }
 
+//positional getters
 int GameObject::getX()
 {
 	return _x;
@@ -65,7 +69,8 @@ int GameObject::getSY()
 	return _sy;
 }
 
-Texture* GameObject::getTexture()
+//get object type
+GameObject::ObjectID GameObject::getType()
 {
-	return _texture;
+	return _type;
 }

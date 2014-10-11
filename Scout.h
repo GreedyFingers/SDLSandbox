@@ -5,7 +5,6 @@ class Scout : public Automaton
 	const char* _texturePath = "charizard.bmp";
 	const int _textureSizeX = 32;
 	const int _textureSizeY = 30;
-	const int _spritestart = 64;
 
 	float _vx;
 	float _vy;
