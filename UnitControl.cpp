@@ -9,6 +9,8 @@ UnitControl::UnitControl(SDL_Renderer* renderer,int rw, int rh)
 	init(renderer,UNIT_CONTROL_DOCK_X, UNIT_CONTROL_DOCK_Y, 
 			GameObject::player, TEXTURE_PATH, SPRITE_COUNT);
 	_currentClip = _clips[0];
+
+	_texture->setAlpha(128);
 }
 
 UnitControl::~UnitControl()

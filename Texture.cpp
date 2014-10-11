@@ -19,3 +19,8 @@ bool Texture::render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip)
 	if (Draw::draw(renderer, _texture, x, y, clip) == false)
 		return true;
 }
+
+void Texture::setAlpha(Uint8 alpha)
+{
+	SDL_SetTextureAlphaMod(_texture, alpha);
+}

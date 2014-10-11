@@ -18,6 +18,8 @@ SDL_Texture* Draw::loadTexture(SDL_Renderer* renderer, std::string fileName)
 		newTexture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
 		if (newTexture == NULL)
 			printf("Unable to create texture from %s. SDL Error: %s\n", fileName.c_str(), SDL_GetError());
+		else
+			SDL_SetTextureBlendMode(newTexture,SDL_BLENDMODE_BLEND);
 		SDL_FreeSurface(loadedSurface);
 	}
 	return newTexture;
