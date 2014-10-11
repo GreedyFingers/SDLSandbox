@@ -13,8 +13,6 @@ class Game
 	//passed to the gameobjects for rendering
 	SDL_Renderer* _renderer;
 
-	SDL_Rect spriteClips[4];
-
 public:
 
 	//receives renderer so that it can load textures onto it

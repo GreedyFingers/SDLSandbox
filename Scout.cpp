@@ -1,18 +1,23 @@
 #include "Scout.h"
 #include "Physics.h"
 
+const int Scout::NO_ANIMATION[1] = { 0 };
+const int Scout::MOVING_ANIMATION[2] = { 0 };
 
 Scout::Scout(SDL_Renderer* renderer,int x, int y)
 {
 	_sx = TEXTURE_SIZE_X;
 	_sy = TEXTURE_SIZE_Y;
-	init(renderer, x, y, GameObject::player, TEXTURE_PATH, SPRITE_COUNT);
+	init(renderer, x, y, GameObject::player, TEXTURE_PATH, SPRITE_COUNT,ANIMATION_COUNT);
+
+	_animations[ANIMATIONS::NONE].init(NO_ANIMATION);
+	_animations[ANIMATIONS::MOVING].init(MOVING_ANIMATION);
+
 	_nextActionTime = SDL_GetTicks() + _movementCooldown;
 
 	_currentState = State::waiting;
 
 }
-
 
 Scout::~Scout()
 {
@@ -45,9 +50,14 @@ void Scout::update()
 			}
 			else
 			{
-				_x += (int)(_speed * _vx * ((float)_timeSinceLastUpdate / _damping));
-				_y += (int)(_speed * _vy * ((float)_timeSinceLastUpdate / _damping));
+				_x += (int)(_speed * _vx * ((float)_clock.getTimeSinceLastUpdate() / _damping));
+				_y += (int)(_speed * _vy * ((float)_clock.getTimeSinceLastUpdate() / _damping));
 			}
 			break;
 	}
+}
+
+void Scout::render(SDL_Renderer* renderer)
+{
+	__super::render(renderer);
 }

@@ -11,6 +11,7 @@ private:
 	const float UNIT_CONTROL_DOCK_H = 1.0f;
 	const char* TEXTURE_PATH = "unitcontrol.png";
 	const int SPRITE_COUNT = 1;
+	const int ANIMATION_COUNT = 0;
 
 public:
 	UnitControl(SDL_Renderer* renderer,int rw, int rh);

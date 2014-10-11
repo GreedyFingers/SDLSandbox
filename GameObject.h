@@ -3,6 +3,8 @@
 #include <SDL.h>
 #include <string>
 #include "Texture.h"
+#include "Animation.h"
+#include "Clock.h"
 
 class GameObject
 {
@@ -10,6 +12,7 @@ class GameObject
 	public:
 		//list GameObject types
 		static enum ObjectID { player };
+
 	private:
 		//this object's type
 		ObjectID _type;
@@ -23,15 +26,17 @@ class GameObject
 		Texture* _texture;
 		int _x, _y;
 		int _sx, _sy;
-		int _spriteCount;
 
 		//Sprite clips
 		SDL_Rect* _clips;
 		SDL_Rect _currentClip;
 
+		//Animations
+		Animation* _animations;
+		Animation _currentAnimation;
+
 		//Time synchronization information
-		int _lastUpdateTime;
-		int _timeSinceLastUpdate;
+		Clock _clock;
 
 		//slows down GameObjects specifically
 		int _damping = 50;
@@ -47,10 +52,13 @@ class GameObject
 
 		//initialize object
 		void init(SDL_Renderer* renderer,int x, int y, ObjectID type, 
-					std::string texturePath, int spriteCount);
+					std::string texturePath, int spriteCount, int animationCount);
 
 		//initialize texture clips
-		void initClips();
+		void initClips(int spriteCount);
+
+		//initialize animation clips
+		void initAnimations(int animationCount);
 
 		//getters
 		int getX();
@@ -59,7 +67,5 @@ class GameObject
 		int getSY();
 
 		ObjectID getType();
-
-		//
 };
 

@@ -6,6 +6,15 @@ class Scout : public Automaton
 	const int TEXTURE_SIZE_X = 32;
 	const int TEXTURE_SIZE_Y = 30;
 	const int SPRITE_COUNT = 8;
+	const int ANIMATION_COUNT = 2;
+	static const int NO_ANIMATION[1];
+	static const int MOVING_ANIMATION[2];
+
+	enum ANIMATIONS
+	{
+		NONE = 0,
+		MOVING = 1
+	};
 
 	float _vx;
 	float _vy;
@@ -22,5 +31,6 @@ public:
 	~Scout();
 	void chooseRandomDirection();
 	void update();
+	void render(SDL_Renderer* renderer);
 };
 

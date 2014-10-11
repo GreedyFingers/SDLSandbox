@@ -9,6 +9,7 @@ class Player : public GameObject
 	const int TEXTURE_SIZE_X = 32;
 	const int TEXTURE_SIZE_Y = 30;
 	const int SPRITE_COUNT = 8;
+	const int ANIMATION_COUNT = 0;
 
 public:
 	Player(SDL_Renderer* renderer,int, int);

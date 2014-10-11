@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="Automotan.cpp" />
@@ -147,9 +148,11 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scout.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Clock.cpp" />
     <ClCompile Include="UnitControl.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="draw.h" />
     <ClInclude Include="Automaton.h" />
@@ -159,6 +162,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scout.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Clock.h" />
     <ClInclude Include="UnitControl.h" />
   </ItemGroup>
   <ItemGroup>
