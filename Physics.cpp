@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "Physics.h"
+#include "Character.h"
 
 
 Physics::Physics()
@@ -32,4 +33,20 @@ void Physics::ChooseRandomDirection(float* vx, float *vy)
 
 	*vx = tempX;
 	*vy = tempY;
+}
+
+Character::Direction Physics::DetermineDirection(float vx, float vy)
+{
+	bool _facingLeftOrRight = abs(vx) > abs(vy);
+
+	if (abs(vx) > abs(vy))
+		if (vx > 0)
+			return Character::Direction::Right;
+		else
+			return Character::Direction::Left;
+	else
+		if (vy > 0)
+			return Character::Direction::Down;
+		else
+			return Character::Direction::Up;
 }

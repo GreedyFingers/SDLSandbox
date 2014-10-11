@@ -14,18 +14,33 @@ GameObject::~GameObject()
 }
 
 //initialize clips, object location, type, and texture
-void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type, std::string texturePath)
+void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type, 
+						std::string texturePath, int spriteCount)
 {
 
 	_x = x;
 	_y = y;
 	_type = type;
 	_texture = new Texture(renderer,texturePath);
-	_clips = (SDL_Rect*)malloc(sizeof(SDL_Rect));
+
+	_spriteCount = spriteCount;
+	initClips();
 	_currentClip = _clips[0];
 
 	_remove = false;
 
+}
+
+void GameObject::initClips()
+{
+	_clips = (SDL_Rect*)malloc(sizeof(SDL_Rect)*_spriteCount);
+	for (int i = 0; i < _spriteCount; i++)
+	{
+		_clips[i].x = i * _sx;
+		_clips[i].y = 0;
+		_clips[i].w = _sx;
+		_clips[i].h = _sy;
+	}
 }
 
 void GameObject::input()

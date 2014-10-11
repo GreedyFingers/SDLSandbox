@@ -5,13 +5,10 @@ UnitControl::UnitControl(SDL_Renderer* renderer,int rw, int rh)
 {
 	_sx = (int)(rw * UNIT_CONTROL_DOCK_W);
 	_sy = (int)(rh * UNIT_CONTROL_DOCK_H);
+	_spriteCount = 1;
 	init(renderer,UNIT_CONTROL_DOCK_X, UNIT_CONTROL_DOCK_Y, 
-			GameObject::player, _texturePath);
-
-	_currentClip.x = 0;
-	_currentClip.y = 0;
-	_currentClip.w = _sx;
-	_currentClip.h = _sy;
+			GameObject::player, TEXTURE_PATH, SPRITE_COUNT);
+	_currentClip = _clips[0];
 }
 
 UnitControl::~UnitControl()

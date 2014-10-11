@@ -25,16 +25,16 @@ class GameObject
 		int _sx, _sy;
 		int _spriteCount;
 
+		//Sprite clips
+		SDL_Rect* _clips;
+		SDL_Rect _currentClip;
+
 		//Time synchronization information
 		int _lastUpdateTime;
 		int _timeSinceLastUpdate;
 
-		//slows down gameobjects specifically
+		//slows down GameObjects specifically
 		int _damping = 50;
-
-		//Sprite clips
-		SDL_Rect* _clips;
-		SDL_Rect _currentClip;
 
 	public:
 		GameObject();
@@ -47,7 +47,10 @@ class GameObject
 
 		//initialize object
 		void init(SDL_Renderer* renderer,int x, int y, ObjectID type, 
-					std::string texturePath);
+					std::string texturePath, int spriteCount);
+
+		//initialize texture clips
+		void initClips();
 
 		//getters
 		int getX();
@@ -56,5 +59,7 @@ class GameObject
 		int getSY();
 
 		ObjectID getType();
+
+		//
 };
 

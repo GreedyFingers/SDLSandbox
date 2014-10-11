@@ -9,7 +9,8 @@ private:
 	const int UNIT_CONTROL_DOCK_Y = 0;
 	const float UNIT_CONTROL_DOCK_W = 0.1f;
 	const float UNIT_CONTROL_DOCK_H = 0.5f;
-	const char* _texturePath = "unitcontrol.png";
+	const char* TEXTURE_PATH = "unitcontrol.png";
+	const int SPRITE_COUNT = 1;
 
 public:
 	UnitControl(SDL_Renderer* renderer,int rw, int rh);

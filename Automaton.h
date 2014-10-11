@@ -1,6 +1,6 @@
 #pragma once
-#include "GameObject.h"
-class Automaton : public GameObject
+#include "Character.h"
+class Automaton : public Character
 {
 public:
 	Automaton();

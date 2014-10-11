@@ -4,17 +4,13 @@
 
 Scout::Scout(SDL_Renderer* renderer,int x, int y)
 {
-	_sx = _textureSizeX;
-	_sy = _textureSizeY;
-	init(renderer, x, y, GameObject::player, _texturePath);
+	_sx = TEXTURE_SIZE_X;
+	_sy = TEXTURE_SIZE_Y;
+	init(renderer, x, y, GameObject::player, TEXTURE_PATH, SPRITE_COUNT);
 	_nextActionTime = SDL_GetTicks() + _movementCooldown;
 
 	_currentState = State::waiting;
 
-	_currentClip.x = 0;
-	_currentClip.y = 0;
-	_currentClip.w = _sx;
-	_currentClip.h = _sy;
 }
 
 
@@ -34,6 +30,7 @@ void Scout::update()
 			if (SDL_GetTicks() >= _nextActionTime)
 			{
 				Physics::ChooseRandomDirection(&_vx, &_vy);
+				_currentDirection = Physics::DetermineDirection(_vx, _vy);
 				_nextActionTime += 500;
 				_currentState = State::moving;
 			}
@@ -43,6 +40,8 @@ void Scout::update()
 			{
 				_nextActionTime += 1000;
 				_currentState = State::waiting;
+				_vx = 0;
+				_vy = 0;
 			}
 			else
 			{

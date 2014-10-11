@@ -3,14 +3,9 @@
 
 Player::Player(SDL_Renderer* renderer,int x, int y)
 {
-	_sx = _textureSizeX;
-	_sy = _textureSizeY;
-	init(renderer, x, y,GameObject::player, _texturePath);
-
-	_currentClip.x = 0;
-	_currentClip.y = 0;
-	_currentClip.w = _sx;
-	_currentClip.h = _sy;
+	_sx = TEXTURE_SIZE_X;
+	_sy = TEXTURE_SIZE_Y;
+	init(renderer, x, y, GameObject::player, TEXTURE_PATH, SPRITE_COUNT);
 }
 
 

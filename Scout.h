@@ -2,9 +2,10 @@
 #include "Automaton.h"
 class Scout : public Automaton
 {
-	const char* _texturePath = "charizard.bmp";
-	const int _textureSizeX = 32;
-	const int _textureSizeY = 30;
+	const char* TEXTURE_PATH = "charizard.bmp";
+	const int TEXTURE_SIZE_X = 32;
+	const int TEXTURE_SIZE_Y = 30;
+	const int SPRITE_COUNT = 8;
 
 	float _vx;
 	float _vy;
