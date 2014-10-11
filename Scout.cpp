@@ -10,6 +10,11 @@ Scout::Scout(SDL_Renderer* renderer,int x, int y)
 	_nextActionTime = SDL_GetTicks() + _movementCooldown;
 
 	_currentState = State::waiting;
+
+	_currentClip.x = 0;
+	_currentClip.y = 0;
+	_currentClip.w = _sx;
+	_currentClip.h = _sy;
 }
 
 
@@ -41,8 +46,8 @@ void Scout::update()
 			}
 			else
 			{
-				_x += _speed * _vx * ((float)_timeSinceLastUpdate / _damping);
-				_y += _speed * _vy * ((float)_timeSinceLastUpdate / _damping);
+				_x += (int)(_speed * _vx * ((float)_timeSinceLastUpdate / _damping));
+				_y += (int)(_speed * _vy * ((float)_timeSinceLastUpdate / _damping));
 			}
 			break;
 	}

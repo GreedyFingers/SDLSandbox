@@ -23,22 +23,16 @@ SDL_Texture* Draw::loadTexture(SDL_Renderer* renderer, std::string fileName)
 	return newTexture;
 }
 
-bool Draw::draw(SDL_Renderer *renderer, SDL_Texture *texture, int rendX, int rendY,
-						int texX, int texY, int width, int height)
+bool Draw::draw(SDL_Renderer *renderer, SDL_Texture *texture, int rendX, int rendY, SDL_Rect* clip)
 {
 	if (texture == NULL || renderer == NULL)
 		return false;
 	SDL_Rect rendR;
 	rendR.x = rendX;
 	rendR.y = rendY;
-	rendR.w = width;
-	rendR.h = height;
-	SDL_Rect texR;
-	texR.x = texX;
-	texR.y = texY;
-	texR.w = width;
-	texR.h = height;
-	SDL_RenderCopy(renderer, texture, &texR, &rendR);
+	rendR.w = clip->w;
+	rendR.h = clip->h;
+	SDL_RenderCopy(renderer, texture, clip, &rendR);
 	return true;
 }
 

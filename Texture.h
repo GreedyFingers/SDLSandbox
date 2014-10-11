@@ -8,7 +8,7 @@ class Texture
 public:
 	Texture(SDL_Renderer* renderer,std::string texturePath);
 	~Texture();
-	bool render(SDL_Renderer* renderer,int x, int y, int sx, int sy, int spritestart);
+	bool render(SDL_Renderer* renderer,int x, int y, SDL_Rect* clip);
 
 };
 

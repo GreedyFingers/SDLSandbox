@@ -30,6 +30,9 @@ class GameObject
 
 		int _damping = 50;
 
+		SDL_Rect _clips[1];
+		SDL_Rect _currentClip = _clips[0];
+
 	public:
 		GameObject();
 		~GameObject();

@@ -16,6 +16,8 @@ GameObject::~GameObject()
 void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type,
 	std::string texturePath, int spritestart = 0, int spriteend = 0 )
 {
+	//TODO: initialize _clips in derived classes
+
 	_x = x;
 	_y = y;
 	_spritestart = spritestart;
@@ -39,7 +41,7 @@ void GameObject::update()
 
 void GameObject::render(SDL_Renderer* renderer)
 {
-	if (_texture->render(renderer,_x, _y, _sx, _sy, _spritestart))
+	if (_texture->render(renderer,_x, _y, &_currentClip))
 		_remove = true;
 }
 

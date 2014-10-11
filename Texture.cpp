@@ -14,8 +14,8 @@ Texture::~Texture()
 	_texture = NULL;
 }
 
-bool Texture::render(SDL_Renderer* renderer, int x, int y, int sx, int sy, int spritestart)
+bool Texture::render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip)
 {
-	if (Draw::draw(renderer, _texture, x, y, spritestart, 0, sx, sy) == false)
+	if (Draw::draw(renderer, _texture, x, y, clip) == false)
 		return true;
 }
