@@ -11,7 +11,14 @@ class GameObject
 	//members
 	public:
 		//list GameObject types
-		static enum ObjectID { player };
+		static enum ObjectID { 
+			Player,
+			Scout,
+			UnitControl,
+			Terrain
+		};
+
+		static char* ObjectNames[4];
 
 	private:
 		//this object's type

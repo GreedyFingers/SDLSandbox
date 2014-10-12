@@ -3,11 +3,18 @@
 #include "GameObject.h"
 #include "Draw.h"
 
+char* GameObject::ObjectNames[4] = {
+	"Player",
+	"Scout",
+	"UnitControl",
+	"Terrain"
+};
+
 GameObject::GameObject()
 {
 }
 
-
+//Cleanup
 GameObject::~GameObject()
 {
 	delete _clips;
@@ -21,29 +28,41 @@ GameObject::~GameObject()
 void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type, 
 						std::string texturePath, int spriteCount, int animationCount)
 {
-
+	//set location
 	_x = x;
 	_y = y;
+
+	//Set type
 	_type = type;
 	_texture = new Texture(renderer,texturePath);
 	
+	//Initialize sprites
 	initClips(spriteCount);
 	_currentClip = _clips[0];
 
+	//Initialize animations
 	initAnimations(animationCount);
 
+	//Set flag of when to remove this object
 	_remove = false;
 }
 
+//Create clips for individual sprites within texture
 void GameObject::initClips(int spriteCount)
 {
 	_clips = (SDL_Rect*)malloc(sizeof(SDL_Rect)*spriteCount);
-	for (int i = 0; i < spriteCount; i++)
+	if (_clips == NULL)
+		printf("Error initializing clips for %s texture.\n", ObjectNames[_type]);
+	else
 	{
-		_clips[i].x = i * _sx;
-		_clips[i].y = 0;
-		_clips[i].w = _sx;
-		_clips[i].h = _sy;
+		for (int i = 0; i < spriteCount; i++)
+		{
+			//offset first sprite by sprite size per rectangle
+			_clips[i].x = i * _sx;
+			_clips[i].y = 0;
+			_clips[i].w = _sx;
+			_clips[i].h = _sy;
+		}
 	}
 }
 

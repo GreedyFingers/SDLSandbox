@@ -1,17 +1,23 @@
 #include "Scout.h"
 #include "Physics.h"
 
-const int Scout::NO_ANIMATION[1] = { 0 };
-const int Scout::MOVING_ANIMATION[2] = { 50, 50 };
-
 Scout::Scout(SDL_Renderer* renderer,int x, int y)
 {
-	_sx = TEXTURE_SIZE_X;
-	_sy = TEXTURE_SIZE_Y;
-	init(renderer, x, y, GameObject::player, TEXTURE_PATH, SPRITE_COUNT,ANIMATION_COUNT);
+	_sx = Scout_Assets::TEXTURE_SIZE_X;
+	_sy = Scout_Assets::TEXTURE_SIZE_Y;
+	init(	renderer, 
+			x, 
+			y, 
+			GameObject::Scout, 
+			Scout_Assets::TEXTURE_PATH,
+			Scout_Assets::SPRITE_COUNT,
+			Scout_Assets::ANIMATION_COUNT
+		);
 
-	_animations[ANIMATIONS::NONE].init(NO_ANIMATION, sizeof(NO_ANIMATION));
-	_animations[ANIMATIONS::MOVING].init(MOVING_ANIMATION, sizeof(MOVING_ANIMATION));
+	_animations[Scout_Assets::ANIMATIONS::NONE].init(Scout_Assets::NO_ANIMATION,
+		sizeof(Scout_Assets::NO_ANIMATION));
+	_animations[Scout_Assets::ANIMATIONS::MOVING].init(Scout_Assets::MOVING_ANIMATION,
+		sizeof(Scout_Assets::MOVING_ANIMATION));
 
 	_nextActionTime = SDL_GetTicks() + _movementCooldown;
 
@@ -37,7 +43,7 @@ void Scout::update()
 				Physics::ChooseRandomDirection(&_vx, &_vy);
 				_currentDirection = Physics::DetermineDirection(_vx, _vy);
 				_nextActionTime += 500;
-				_currentAnimation = _animations[ANIMATIONS::MOVING];
+				_currentAnimation = _animations[Scout_Assets::ANIMATIONS::MOVING];
 				_currentAnimation.beginAnimation();
 				_currentState = State::moving;
 			}
@@ -49,7 +55,7 @@ void Scout::update()
 				_currentState = State::waiting;
 				_vx = 0;
 				_vy = 0;
-				_currentAnimation = _animations[ANIMATIONS::NONE];
+				_currentAnimation = _animations[Scout_Assets::ANIMATIONS::NONE];
 				_currentAnimation.beginAnimation();
 			}
 			else

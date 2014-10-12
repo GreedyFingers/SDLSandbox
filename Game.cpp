@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Scout.h"
 #include "UnitControl.h"
+#include "Terrain.h"
 
 Game::Game(SDL_Renderer *renderer)
 {
@@ -21,7 +22,10 @@ Game::Game(SDL_Renderer *renderer)
 	Scout *scout3 = new Scout(renderer, rw * 3 / 4, rh - 300);
 
 	//Menus
-	UnitControl *control1 = new UnitControl(renderer, rw, rh);
+	UnitControl *control1 = new UnitControl(renderer, 0, 0);
+
+	//Terrain
+	Terrain *terrain = new Terrain(renderer, (int)(rw / 5), 0);
 
 	//push objects into vector
 	_objects.push_back(player);
@@ -29,6 +33,7 @@ Game::Game(SDL_Renderer *renderer)
 	_objects.push_back(scout2);
 	_objects.push_back(scout3);
 	_objects.push_back(control1);
+	_objects.push_back(terrain);
 }
 
 Game::~Game()

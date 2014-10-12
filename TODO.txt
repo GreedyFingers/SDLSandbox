@@ -1,0 +1,9 @@
+-Move animation object instances to texture object
+
+-Error handling on mallocs.
+
+-Move initializations to init functions instead of constructors.
+
+-Move textures into static class
+
+-Move clips into texture object

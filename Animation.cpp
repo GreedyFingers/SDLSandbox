@@ -42,7 +42,6 @@ int Animation::getCurrentFrame(int timeSinceLastDraw)
 			//trim off how long this frame took in case of lag, so
 			//it will skip to which ever frame it SHOULD be on
 			_currentFrameTime -= _frameDurations[_currentFrame];
-			printf("current frame: %d. current frame duration: %d\n",_currentFrame, _frameDurations[_currentFrame]);
 			_currentFrame = (_currentFrame + 1) % _numberOfFrames;
 		}
 	}
