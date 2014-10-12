@@ -3,7 +3,7 @@
 
 Animation::Animation()
 {
-
+	_numberOfFrames = 0;
 }
 
 
@@ -12,9 +12,9 @@ Animation::~Animation()
 	delete _frameDurations;
 }
 
-void Animation::init(const int frameTimes[])
+void Animation::init(const int frameTimes[], int size)
 {
-	_numberOfFrames = sizeof(frameTimes) / sizeof(int);
+	_numberOfFrames = size / sizeof(int);
 	_frameDurations = (int*)malloc(sizeof(int) * _numberOfFrames);
 	for (int i = 0; i < _numberOfFrames; i++)
 	{
@@ -30,7 +30,9 @@ void Animation::beginAnimation()
 
 int Animation::getCurrentFrame(int timeSinceLastDraw)
 {
-	if (_numberOfFrames == 1)
+	if (_numberOfFrames == 0)
+		_currentFrame = -1;
+	else if (_numberOfFrames == 1)
 		_currentFrame = 0;
 	else
 	{
@@ -40,6 +42,7 @@ int Animation::getCurrentFrame(int timeSinceLastDraw)
 			//trim off how long this frame took in case of lag, so
 			//it will skip to which ever frame it SHOULD be on
 			_currentFrameTime -= _frameDurations[_currentFrame];
+			printf("current frame: %d. current frame duration: %d\n",_currentFrame, _frameDurations[_currentFrame]);
 			_currentFrame = (_currentFrame + 1) % _numberOfFrames;
 		}
 	}

@@ -14,7 +14,7 @@ public:
 	Animation();
 	~Animation();
 
-	void init(const int frameTimes[]);
+	void init(const int frameTimes[], int size);
 	void beginAnimation();
 	int getCurrentFrame(int timeSinceLastDraw);
 };

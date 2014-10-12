@@ -3,6 +3,8 @@
 
 class Character : public GameObject
 {
+	const int INVALID_FRAME = -1;
+
 public:
 
 	enum Direction {

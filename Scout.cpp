@@ -2,7 +2,7 @@
 #include "Physics.h"
 
 const int Scout::NO_ANIMATION[1] = { 0 };
-const int Scout::MOVING_ANIMATION[2] = { 0 };
+const int Scout::MOVING_ANIMATION[2] = { 50, 50 };
 
 Scout::Scout(SDL_Renderer* renderer,int x, int y)
 {
@@ -10,8 +10,8 @@ Scout::Scout(SDL_Renderer* renderer,int x, int y)
 	_sy = TEXTURE_SIZE_Y;
 	init(renderer, x, y, GameObject::player, TEXTURE_PATH, SPRITE_COUNT,ANIMATION_COUNT);
 
-	_animations[ANIMATIONS::NONE].init(NO_ANIMATION);
-	_animations[ANIMATIONS::MOVING].init(MOVING_ANIMATION);
+	_animations[ANIMATIONS::NONE].init(NO_ANIMATION, sizeof(NO_ANIMATION));
+	_animations[ANIMATIONS::MOVING].init(MOVING_ANIMATION, sizeof(MOVING_ANIMATION));
 
 	_nextActionTime = SDL_GetTicks() + _movementCooldown;
 
@@ -37,6 +37,8 @@ void Scout::update()
 				Physics::ChooseRandomDirection(&_vx, &_vy);
 				_currentDirection = Physics::DetermineDirection(_vx, _vy);
 				_nextActionTime += 500;
+				_currentAnimation = _animations[ANIMATIONS::MOVING];
+				_currentAnimation.beginAnimation();
 				_currentState = State::moving;
 			}
 			break;
@@ -47,6 +49,8 @@ void Scout::update()
 				_currentState = State::waiting;
 				_vx = 0;
 				_vy = 0;
+				_currentAnimation = _animations[ANIMATIONS::NONE];
+				_currentAnimation.beginAnimation();
 			}
 			else
 			{
