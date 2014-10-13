@@ -149,6 +149,8 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scout.cpp" />
     <ClCompile Include="Scout_Assets.cpp" />
+    <ClCompile Include="SparkHUD.cpp" />
+    <ClCompile Include="SparkHUD_Assets.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Terrain_Assets.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -168,6 +170,8 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scout.h" />
     <ClInclude Include="Scout_Assets.h" />
+    <ClInclude Include="SparkHUD.h" />
+    <ClInclude Include="SparkHUD_Assets.h" />
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="Terrain_Assets.h" />
     <ClInclude Include="Texture.h" />
@@ -178,6 +182,7 @@
   <ItemGroup>
     <Image Include="bulbasaur.bmp" />
     <Image Include="charizard.bmp" />
+    <Image Include="sparkHUD.png" />
     <Image Include="terrain.png" />
     <Image Include="unitcontrol.png" />
   </ItemGroup>

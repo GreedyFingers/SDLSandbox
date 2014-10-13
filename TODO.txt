@@ -7,3 +7,5 @@
 -Move textures into static class
 
 -Move clips into texture object
+
+-Make x and y for GameObjects the center

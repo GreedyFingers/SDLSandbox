@@ -1,10 +1,11 @@
 #pragma once
-class Terrain_Assets
+class SparkHUD_Assets
 {
-public:
 
-	static const int TEXTURE_W = 600;
-	static const int TEXTURE_H = 800;
+public:
+	
+	static const int TEXTURE_W = 75;
+	static const int TEXTURE_H = 75;
 	static const char* TEXTURE_PATH;
 	static const int SPRITE_COUNT = 1;
 	static const int ANIMATION_COUNT = 1;
@@ -15,7 +16,7 @@ public:
 		NONE = 0
 	};
 
-	Terrain_Assets();
-	~Terrain_Assets();
+	SparkHUD_Assets();
+	~SparkHUD_Assets();
 };
 

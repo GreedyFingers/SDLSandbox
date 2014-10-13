@@ -19,6 +19,8 @@ bool Texture::render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip)
 {
 	if (Draw::draw(renderer, _texture, x, y, clip) == false)
 		return true;
+	else
+		return false;
 }
 
 //Set transparency of texture

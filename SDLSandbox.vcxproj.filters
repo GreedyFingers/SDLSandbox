@@ -93,6 +93,12 @@
     <ClCompile Include="Terrain_Assets.cpp">
       <Filter>Source Files\Assets</Filter>
     </ClCompile>
+    <ClCompile Include="SparkHUD.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="SparkHUD_Assets.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="draw.h">
@@ -146,6 +152,12 @@
     <ClInclude Include="Terrain_Assets.h">
       <Filter>Header Files\Assets</Filter>
     </ClInclude>
+    <ClInclude Include="SparkHUD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SparkHUD_Assets.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="bulbasaur.bmp">
@@ -158,6 +170,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="terrain.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sparkHUD.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
