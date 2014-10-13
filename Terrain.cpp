@@ -14,7 +14,7 @@ Terrain::Terrain(SDL_Renderer* renderer, int x, int y)
 		);
 	_currentClip = _clips[0];
 
-	_animations[Terrain_Assets::ANIMATIONS::NONE].init(Terrain_Assets::NO_ANIMATION, 
+	_texture->getAnimations()[Terrain_Assets::ANIMATIONS::NONE].init(Terrain_Assets::NO_ANIMATION,
 														sizeof(Terrain_Assets::NO_ANIMATION));
 }
 

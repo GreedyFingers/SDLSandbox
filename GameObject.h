@@ -37,10 +37,7 @@ class GameObject
 		//Sprite clips
 		SDL_Rect* _clips;
 		SDL_Rect _currentClip;
-
-		//Animations
-		Animation* _animations;
-		Animation _currentAnimation;
+		int _currentClipIndex;
 
 		//Time synchronization information
 		Clock _clock;

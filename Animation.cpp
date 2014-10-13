@@ -30,10 +30,8 @@ void Animation::beginAnimation()
 
 int Animation::getCurrentFrame(int timeSinceLastDraw)
 {
-	if (_numberOfFrames == 0)
-		_currentFrame = -1;
-	else if (_numberOfFrames == 1)
-		_currentFrame = 0;
+	if (_numberOfFrames <= 1)
+		_currentFrame = 0; 
 	else
 	{
 		_currentFrameTime += timeSinceLastDraw;

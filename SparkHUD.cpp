@@ -16,7 +16,7 @@ SparkHUD::SparkHUD(SDL_Renderer* renderer, int x, int y)
 		);
 	_currentClip = _clips[0];
 
-	_animations[SparkHUD_Assets::ANIMATIONS::NONE].init(SparkHUD_Assets::NO_ANIMATION,
+	_texture->getAnimations()[SparkHUD_Assets::ANIMATIONS::NONE].init(SparkHUD_Assets::NO_ANIMATION,
 														sizeof(SparkHUD_Assets::NO_ANIMATION));
 }
 

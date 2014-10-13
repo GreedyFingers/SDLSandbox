@@ -152,11 +152,11 @@
     <ClInclude Include="Terrain_Assets.h">
       <Filter>Header Files\Assets</Filter>
     </ClInclude>
-    <ClInclude Include="SparkHUD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SparkHUD_Assets.h">
       <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="SparkHUD.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

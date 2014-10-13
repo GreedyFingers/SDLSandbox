@@ -14,9 +14,9 @@ Scout::Scout(SDL_Renderer* renderer,int x, int y)
 			Scout_Assets::ANIMATION_COUNT
 		);
 
-	_animations[Scout_Assets::ANIMATIONS::NONE].init(Scout_Assets::NO_ANIMATION,
+	_texture->getAnimations()[Scout_Assets::ANIMATIONS::NONE].init(Scout_Assets::NO_ANIMATION,
 		sizeof(Scout_Assets::NO_ANIMATION));
-	_animations[Scout_Assets::ANIMATIONS::MOVING].init(Scout_Assets::MOVING_ANIMATION,
+	_texture->getAnimations()[Scout_Assets::ANIMATIONS::MOVING].init(Scout_Assets::MOVING_ANIMATION,
 		sizeof(Scout_Assets::MOVING_ANIMATION));
 
 	_nextActionTime = SDL_GetTicks() + _movementCooldown;
@@ -43,8 +43,7 @@ void Scout::update()
 				Physics::ChooseRandomDirection(&_vx, &_vy);
 				_currentDirection = Physics::DetermineDirection(_vx, _vy);
 				_nextActionTime += 500;
-				_currentAnimation = _animations[Scout_Assets::ANIMATIONS::MOVING];
-				_currentAnimation.beginAnimation();
+				_texture->setCurrentAnimationIndex(Scout_Assets::ANIMATIONS::MOVING);
 				_currentState = State::moving;
 			}
 			break;
@@ -55,8 +54,7 @@ void Scout::update()
 				_currentState = State::waiting;
 				_vx = 0;
 				_vy = 0;
-				_currentAnimation = _animations[Scout_Assets::ANIMATIONS::NONE];
-				_currentAnimation.beginAnimation();
+				_texture->setCurrentAnimationIndex(Scout_Assets::ANIMATIONS::NONE);
 			}
 			else
 			{

@@ -16,7 +16,7 @@ UnitControl::UnitControl(SDL_Renderer* renderer,int x, int y)
 	_currentClip = _clips[0];
 	_texture->setAlpha(128);
 
-	_animations[UnitControl_Assets::ANIMATIONS::NONE].init(UnitControl_Assets::NO_ANIMATION, 
+	_texture->getAnimations()[UnitControl_Assets::ANIMATIONS::NONE].init(UnitControl_Assets::NO_ANIMATION,
 														sizeof(UnitControl_Assets::NO_ANIMATION));
 }
 

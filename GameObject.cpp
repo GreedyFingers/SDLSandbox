@@ -19,9 +19,6 @@ GameObject::~GameObject()
 {
 	delete _clips;
 	_clips = NULL;
-
-	delete _animations;
-	_animations = NULL;
 }
 
 //initialize clips, object location, type, and texture
@@ -34,14 +31,12 @@ void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type,
 
 	//Set type
 	_type = type;
-	_texture = new Texture(renderer,texturePath);
+	_texture = new Texture(renderer,texturePath,animationCount);
 	
 	//Initialize sprites
 	initClips(spriteCount);
 	_currentClip = _clips[0];
-
-	//Initialize animations
-	initAnimations(animationCount);
+	_currentClipIndex = 0;
 
 	//Set flag of when to remove this object
 	_remove = false;
@@ -66,14 +61,6 @@ void GameObject::initClips(int spriteCount)
 	}
 }
 
-//TODO: Figure out how to make this object oriented so that I don't have to
-//set all of my animations in the derived classes. I need a single constant with all
-//of my constant arrays of frame durations
-void GameObject::initAnimations(int animationCount)
-{
-	_animations = (Animation*)malloc(sizeof(Animation)*animationCount);
-}
-
 void GameObject::input()
 {
 
@@ -89,7 +76,7 @@ void GameObject::update()
 void GameObject::render(SDL_Renderer* renderer)
 {
 	_clock.setTimeSinceLastDraw(SDL_GetTicks());
-	if (_texture->render(renderer,_x, _y, &_currentClip))
+	if (_texture->render(renderer,_x, _y, _clips, _currentClipIndex, _clock.getTimeSinceLastDraw()))
 		_remove = true;
 }
 
