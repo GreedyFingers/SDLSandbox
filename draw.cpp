@@ -1,5 +1,6 @@
 #pragma once
 #include "draw.h"
+#include "Global_Assets.h"
 
 SDL_Texture* Draw::loadTexture(SDL_Renderer* renderer, std::string fileName)
 {
@@ -36,6 +37,36 @@ bool Draw::draw(SDL_Renderer *renderer, SDL_Texture *texture, int rendX, int ren
 	rendR.h = clip->h;
 	SDL_RenderCopy(renderer, texture, clip, &rendR);
 	return true;
+}
+
+bool Draw::loadText(SDL_Renderer* renderer, std::string textureText, SDL_Color textColor,
+					SDL_Texture* texture, int* sx, int* sy)
+{
+	bool drawSucceeded = false;
+	SDL_Surface* textureSurface = TTF_RenderText_Solid(Global_Assets::_font, textureText.c_str(), textColor);
+	if (textureSurface == NULL)
+	{
+		printf("Unable to render text surface. SDL_ttf Error: %s\n", TTF_GetError());
+		drawSucceeded = false;
+	}
+	else
+	{
+		//Create texture from surface
+		texture = SDL_CreateTextureFromSurface(renderer, textureSurface);
+		if (texture == NULL)
+		{
+			printf("Unable to create texture from rendererd text. SDL Error: %s\n", SDL_GetError());
+			drawSucceeded = false;
+		}
+		else
+		{
+			*sx = textureSurface->w;
+			*sy = textureSurface->h;
+			drawSucceeded = true;
+		}
+	}
+
+	return drawSucceeded;
 }
 
 bool Draw::setTransparentColor(SDL_Surface *target, int R, int G, int B)

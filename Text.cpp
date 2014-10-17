@@ -1,0 +1,12 @@
+#include "Text.h"
+#include "draw.h"
+
+Text::~Text()
+{
+}
+
+bool Text::loadText(SDL_Renderer* renderer, std::string textureText, SDL_Color textColor,
+					SDL_Texture* texture, int* sx, int* sy)
+{
+	return Draw::loadText(renderer, textureText, textColor, texture, sx, sy);
+}

@@ -5,6 +5,7 @@
 #include "Texture.h"
 #include "Animation.h"
 #include "Clock.h"
+#include "Sprite.h"
 
 class GameObject
 {
@@ -30,7 +31,7 @@ class GameObject
 	protected:
 
 		//Texture information
-		Texture* _texture;
+		Sprite* _sprite;
 		int _x, _y;
 		int _sx, _sy;
 

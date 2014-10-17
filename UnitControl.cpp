@@ -14,9 +14,9 @@ UnitControl::UnitControl(SDL_Renderer* renderer,int x, int y)
 			UnitControl_Assets::ANIMATION_COUNT
 		);
 	_currentClip = _clips[0];
-	_texture->setAlpha(128);
+	_sprite->setAlpha(128);
 
-	_texture->getAnimations()[UnitControl_Assets::ANIMATIONS::NONE].init(UnitControl_Assets::NO_ANIMATION,
+	_sprite->getAnimations()[UnitControl_Assets::ANIMATIONS::NONE].init(UnitControl_Assets::NO_ANIMATION,
 														sizeof(UnitControl_Assets::NO_ANIMATION));
 }
 

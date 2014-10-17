@@ -31,7 +31,7 @@ void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type,
 
 	//Set type
 	_type = type;
-	_texture = new Texture(renderer,texturePath,animationCount);
+	_sprite = new Sprite(renderer, texturePath, animationCount);
 	
 	//Initialize sprites
 	initClips(spriteCount);
@@ -76,7 +76,7 @@ void GameObject::update()
 void GameObject::render(SDL_Renderer* renderer)
 {
 	_clock.setTimeSinceLastDraw(SDL_GetTicks());
-	if (_texture->render(renderer,_x, _y, _clips, _currentClipIndex, _clock.getTimeSinceLastDraw()))
+	if (_sprite->render(renderer, _x, _y, _clips, _currentClipIndex, _clock.getTimeSinceLastDraw()))
 		_remove = true;
 }
 

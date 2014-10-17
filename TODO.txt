@@ -1,11 +1,19 @@
--Move animation object instances to texture object
+-Move clips into texture object
 
--Error handling on mallocs.
+-make texture a possible standalone without animations
 
 -Move initializations to init functions instead of constructors.
 
+-Make x and y for GameObjects the center
+
+-Error handling on mallocs.
+
 -Move textures into static class
 
--Move clips into texture object
+-Create scale for screen size
 
--Make x and y for GameObjects the center
+-Flag when to remove things based on errors
+
+-remove unneeded includes in classes
+
+-make static renderer member in Draw

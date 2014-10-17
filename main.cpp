@@ -16,7 +16,7 @@ SDL_Renderer* renderer = NULL;
 bool init()
 {
 	//Init time
-	srand(time(0));
+	srand((unsigned int)time(0));
 
 	//Init flag
 	bool success = true;
