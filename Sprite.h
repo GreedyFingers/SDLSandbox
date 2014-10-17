@@ -1,9 +1,9 @@
 #pragma once
 #include "Texture.h"
 
-class Sprite : public Texture
+class Sprite
 {
-
+	Texture _texture;
 	Animation* _animations;
 	Animation _currentAnimation;
 	int _currentAnimationIndex;

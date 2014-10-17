@@ -8,17 +8,19 @@ Terrain::Terrain(SDL_Renderer* renderer, int x, int y)
 			x, 
 			y, 
 			GameObject::UnitControl, 
-			Terrain_Assets::TEXTURE_PATH, 
-			Terrain_Assets::SPRITE_COUNT, 
-			Terrain_Assets::ANIMATION_COUNT
+			Terrain_Assets::SPRITE_COUNT
 		);
 	_currentClip = _clips[0];
 
-	_sprite->getAnimations()[Terrain_Assets::ANIMATIONS::NONE].init(Terrain_Assets::NO_ANIMATION,
-														sizeof(Terrain_Assets::NO_ANIMATION));
+	_texture.init(renderer, Terrain_Assets::TEXTURE_PATH);
 }
 
 
 Terrain::~Terrain()
 {
+}
+
+void Terrain::render(SDL_Renderer* renderer)
+{
+	_texture.render(renderer, _x, _y, _clips, _currentClipIndex);
 }

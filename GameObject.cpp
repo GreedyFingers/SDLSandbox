@@ -22,16 +22,14 @@ GameObject::~GameObject()
 }
 
 //initialize clips, object location, type, and texture
-void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type, 
-						std::string texturePath, int spriteCount, int animationCount)
+void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type, int spriteCount)
 {
-	//set location
+	//Set location
 	_x = x;
 	_y = y;
 
 	//Set type
 	_type = type;
-	_sprite = new Sprite(renderer, texturePath, animationCount);
 	
 	//Initialize sprites
 	initClips(spriteCount);
@@ -70,14 +68,6 @@ void GameObject::input()
 void GameObject::update()
 {
 	_clock.setTimeSinceLastUpdate(SDL_GetTicks());
-}
-
-//render this object's texture with the current clip
-void GameObject::render(SDL_Renderer* renderer)
-{
-	_clock.setTimeSinceLastDraw(SDL_GetTicks());
-	if (_sprite->render(renderer, _x, _y, _clips, _currentClipIndex, _clock.getTimeSinceLastDraw()))
-		_remove = true;
 }
 
 //positional getters

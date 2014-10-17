@@ -25,13 +25,9 @@ class GameObject
 		//this object's type
 		ObjectID _type;
 
-		//flag to remove
-		bool _remove;
-
 	protected:
 
-		//Texture information
-		Sprite* _sprite;
+		//Position information
 		int _x, _y;
 		int _sx, _sy;
 
@@ -46,6 +42,9 @@ class GameObject
 		//slows down GameObjects specifically
 		int _damping = 50;
 
+		//flag to remove
+		bool _remove;
+
 	public:
 		GameObject();
 		~GameObject();
@@ -53,11 +52,10 @@ class GameObject
 		//Game logic members
 		virtual void input();
 		virtual void update();
-		virtual void render(SDL_Renderer* renderer);
+		virtual void render(SDL_Renderer* renderer) = 0;
 
 		//initialize object
-		void init(SDL_Renderer* renderer,int x, int y, ObjectID type, 
-					std::string texturePath, int spriteCount, int animationCount);
+		void init(SDL_Renderer* renderer,int x, int y, ObjectID type, int spriteCount);
 
 		//initialize texture clips
 		void initClips(int spriteCount);

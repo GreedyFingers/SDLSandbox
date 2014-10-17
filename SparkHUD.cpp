@@ -10,17 +10,19 @@ SparkHUD::SparkHUD(SDL_Renderer* renderer, int x, int y)
 			x,
 			y,
 			GameObject::UnitControl,
-			SparkHUD_Assets::TEXTURE_PATH,
-			SparkHUD_Assets::SPRITE_COUNT,
-			SparkHUD_Assets::ANIMATION_COUNT
+			SparkHUD_Assets::SPRITE_COUNT
 		);
 	_currentClip = _clips[0];
 
-	_sprite->getAnimations()[SparkHUD_Assets::ANIMATIONS::NONE].init(SparkHUD_Assets::NO_ANIMATION,
-														sizeof(SparkHUD_Assets::NO_ANIMATION));
+	_texture.init(renderer, SparkHUD_Assets::TEXTURE_PATH);
 }
 
 
 SparkHUD::~SparkHUD()
 {
+}
+
+void SparkHUD::render(SDL_Renderer* renderer)
+{
+	_texture.render(renderer, _x, _y, _clips, _currentClipIndex);
 }

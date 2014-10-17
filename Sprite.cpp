@@ -3,7 +3,7 @@
 
 Sprite::Sprite(SDL_Renderer* renderer, std::string texturePath, int animationCount)
 {
-	_texture = Draw::loadTexture(renderer, texturePath);
+	_texture.init(renderer, texturePath);
 	initAnimations(animationCount);
 }
 
@@ -18,10 +18,7 @@ bool Sprite::render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip,
 	int clipIndex, int timeSinceLastDraw)
 {
 	_currentAnimationIndex = _currentAnimation.getCurrentFrame(timeSinceLastDraw);
-	if (Draw::draw(renderer, _texture, x, y, &clip[clipIndex + _currentAnimationIndex]) == false)
-		return true;
-	else
-		return false;
+	return _texture.render(renderer, x, y, clip, clipIndex + _currentAnimationIndex);
 }
 
 void Sprite::initAnimations(int animationCount)

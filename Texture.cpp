@@ -20,4 +20,15 @@ void Texture::setAlpha(Uint8 alpha)
 	SDL_SetTextureAlphaMod(_texture, alpha);
 }
 
-//TODO: add render method for animationless textures (like menus)
+bool Texture::render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip, int clipIndex)
+{
+	if (Draw::draw(renderer, _texture, x, y, &clip[clipIndex]) == false)
+		return true;
+	else
+		return false;
+}
+
+void Texture::init(SDL_Renderer* renderer, std::string texturePath)
+{
+	_texture = Draw::loadTexture(renderer, texturePath);
+}

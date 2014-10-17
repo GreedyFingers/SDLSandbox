@@ -3,8 +3,9 @@
 #include <string>
 #include "GameObject.h"
 #include "Player_Assets.h"
+#include "Character.h"
 
-class Player : public GameObject
+class Player : public Character
 {
 
 public:
