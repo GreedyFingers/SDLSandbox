@@ -11,6 +11,7 @@ Character::~Character()
 {
 }
 
+//Initialize the sprite batch and animations
 void Character::init(int x, int y, ObjectID type,
 	std::string texturePath, int spriteCount, int animationCount)
 {
@@ -18,6 +19,7 @@ void Character::init(int x, int y, ObjectID type,
 	_sprite = new Sprite(texturePath, animationCount);
 }
 
+//Render sprite clip based on the character's direction
 void Character::render()
 {
 		_currentClip = _clips[_currentDirection];
