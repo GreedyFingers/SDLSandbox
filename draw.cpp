@@ -53,34 +53,10 @@ bool Draw::draw(SDL_Texture *texture, int rendX, int rendY, SDL_Rect* clip)
 	return true;
 }
 
-bool Draw::loadText(std::string textureText, SDL_Color textColor,
-					SDL_Texture* texture, int* sx, int* sy)
+SDL_Texture* Draw::loadText(std::string textureText, SDL_Color textColor,
+					int* sx, int* sy)
 {
-	bool drawSucceeded = false;
-	SDL_Surface* textureSurface = TTF_RenderText_Solid(Global_Assets::_font, textureText.c_str(), textColor);
-	if (textureSurface == NULL)
-	{
-		printf("Unable to render text surface. SDL_ttf Error: %s\n", TTF_GetError());
-		drawSucceeded = false;
-	}
-	else
-	{
-		//Create texture from surface
-		texture = SDL_CreateTextureFromSurface(_renderer, textureSurface);
-		if (texture == NULL)
-		{
-			printf("Unable to create texture from rendererd text. SDL Error: %s\n", SDL_GetError());
-			drawSucceeded = false;
-		}
-		else
-		{
-			*sx = textureSurface->w;
-			*sy = textureSurface->h;
-			drawSucceeded = true;
-		}
-	}
-
-	return drawSucceeded;
+	//TODO: change to use OpenGL fonts or something
 }
 
 bool Draw::setTransparentColor(SDL_Surface *target, int R, int G, int B)

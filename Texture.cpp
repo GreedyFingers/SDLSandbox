@@ -28,7 +28,8 @@ bool Texture::render(int x, int y, SDL_Rect* clip, int clipIndex)
 		return false;
 }
 
-void Texture::init(std::string texturePath)
+void Texture::setTexture(SDL_Texture* texture)
 {
-	_texture = Draw::loadTexture(texturePath);
+	SDL_DestroyTexture(_texture);
+	_texture = texture;
 }

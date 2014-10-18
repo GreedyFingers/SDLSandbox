@@ -56,6 +56,14 @@ bool init()
 				printf("SDL_image could not initialize. SDL_image Error: %s\n", IMG_GetError());
 				success = false;
 			}
+			else
+			{
+				if (TTF_Init() == -1)
+				{
+					printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
+					success = false;
+				}
+			}
 		}
 	}
 
@@ -90,10 +98,13 @@ int main(int argc, char *argv[])
 	//Create main game class
 	Game game;
 
+	//TODO: add onload waiter here until everything has loaded
+	//SDL_Delay(100);
 	//Game loop
 	bool quit = false;
 	while (!quit)
 	{
+
 		//process all inputs
 		while (SDL_PollEvent(&e) != 0)
 		{
@@ -112,7 +123,6 @@ int main(int argc, char *argv[])
 
 		//wait about 1/60 of a second
 		SDL_Delay(30);
-
 	}
 
 	close();

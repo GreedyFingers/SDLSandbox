@@ -3,7 +3,7 @@
 
 Sprite::Sprite(std::string texturePath, int animationCount)
 {
-	_texture.init(texturePath);
+	_texture.setTexture(Draw::loadTexture(texturePath));
 	initAnimations(animationCount);
 }
 

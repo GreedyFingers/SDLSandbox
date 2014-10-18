@@ -2,16 +2,17 @@
 #include "Texture.h"
 #include "Global_Assets.h"
 
-class Text : public Texture
+class Text
 {
-
+	Texture _texture;
+	SDL_Rect _clip;
 public:
 	Text();
 	~Text();
 
-	bool loadText(std::string textureText, SDL_Color textColor,
-				SDL_Texture* texture, int* sx, int* sy);
-
+	void loadText(std::string textureText, SDL_Color textColor,
+					int sx, int sy);
+	void render(int x, int y);
 	//TODO: add functions for actually drawing the text
 };
 

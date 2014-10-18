@@ -6,7 +6,6 @@
 #include "Clock.h"
 #include "Animation.h"
 
-//TODO: BREAK UP THIS CLASS INTO Image -> Texture and Image -> Text
 class Texture
 {
 
@@ -18,8 +17,8 @@ public:
 
 	Texture();
 	~Texture();
-	void init(std::string texturePath);
-	bool render(int x, int y, SDL_Rect* clip, int clipIndex);
+	bool render(int x, int y, SDL_Rect* clip, int clipIndex = 0);
 	void setAlpha(Uint8 alpha);
+	void setTexture(SDL_Texture* texture);
 };
 

@@ -13,7 +13,7 @@ UnitControl::UnitControl(int x, int y)
 	_currentClip = _clips[0];
 	//_sprite->setAlpha(128);
 
-	_texture.init(UnitControl_Assets::TEXTURE_PATH);
+	_texture.setTexture(Draw::loadTexture(UnitControl_Assets::TEXTURE_PATH));
 }
 
 UnitControl::~UnitControl()

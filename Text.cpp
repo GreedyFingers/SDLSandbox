@@ -1,12 +1,24 @@
 #include "Text.h"
 #include "draw.h"
 
+Text::Text()
+{
+
+}
+
 Text::~Text()
 {
 }
 
-bool Text::loadText(std::string textureText, SDL_Color textColor,
-					SDL_Texture* texture, int* sx, int* sy)
+void Text::loadText(std::string textureText, SDL_Color textColor,
+					int sx, int sy)
 {
-	return Draw::loadText(textureText, textColor, texture, sx, sy);
+	_texture.setTexture(Draw::loadText(textureText, textColor, &sx, &sy));
+	_clip.w = sx;
+	_clip.h = sy;
+}
+
+void Text::render(int x, int y)
+{
+	_texture.render(x, y, &_clip);
 }

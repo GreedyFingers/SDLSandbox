@@ -1,4 +1,5 @@
 #include "Terrain.h"
+#include "draw.h"
 
 Terrain::Terrain(int x, int y)
 {
@@ -11,7 +12,7 @@ Terrain::Terrain(int x, int y)
 		);
 	_currentClip = _clips[0];
 
-	_texture.init(Terrain_Assets::TEXTURE_PATH);
+	_texture.setTexture(Draw::loadTexture(Terrain_Assets::TEXTURE_PATH));
 }
 
 

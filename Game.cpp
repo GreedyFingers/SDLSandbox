@@ -16,7 +16,9 @@ Game::Game()
 	int rw;
 	int rh;
 
+	//Initialize common assets
 	Draw::getRendererSize(&rw, &rh);
+
 
 	//Make some objects for start of game
 	Player *player = new Player(600, rh - 50);

@@ -1,4 +1,4 @@
--Move clips into texture object
+-Move clips into texture object and set clipIndex to 0 by default
 
 -make texture a possible standalone without animations
 
@@ -19,3 +19,9 @@
 -make parent UXControl object
 
 -make animation begin call setCurrentAnimationIndex
+
+-Move draw calls to texture object (instead of in gameobjects)
+
+-document code in comments
+
+-use logSDLError
