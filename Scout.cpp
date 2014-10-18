@@ -1,12 +1,11 @@
 #include "Scout.h"
 #include "Physics.h"
 
-Scout::Scout(SDL_Renderer* renderer,int x, int y)
+Scout::Scout(int x, int y)
 {
 	_sx = Scout_Assets::TEXTURE_SIZE_X;
 	_sy = Scout_Assets::TEXTURE_SIZE_Y;
-	init(	renderer, 
-			x, 
+	init(	x, 
 			y, 
 			GameObject::Scout, 
 			Scout_Assets::TEXTURE_PATH,
@@ -63,9 +62,4 @@ void Scout::update()
 			}
 			break;
 	}
-}
-
-void Scout::render(SDL_Renderer* renderer)
-{
-	__super::render(renderer);
 }

@@ -1,9 +1,9 @@
 #include "Sprite.h"
 #include "Draw.h"
 
-Sprite::Sprite(SDL_Renderer* renderer, std::string texturePath, int animationCount)
+Sprite::Sprite(std::string texturePath, int animationCount)
 {
-	_texture.init(renderer, texturePath);
+	_texture.init(texturePath);
 	initAnimations(animationCount);
 }
 
@@ -14,11 +14,11 @@ Sprite::~Sprite()
 }
 
 //Render a clip from the texture to screen
-bool Sprite::render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip,
+bool Sprite::render(int x, int y, SDL_Rect* clip,
 	int clipIndex, int timeSinceLastDraw)
 {
 	_currentAnimationIndex = _currentAnimation.getCurrentFrame(timeSinceLastDraw);
-	return _texture.render(renderer, x, y, clip, clipIndex + _currentAnimationIndex);
+	return _texture.render(x, y, clip, clipIndex + _currentAnimationIndex);
 }
 
 void Sprite::initAnimations(int animationCount)

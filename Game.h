@@ -10,13 +10,10 @@ class Game
 	//All game objects to loop through
 	std::vector<GameObject*> _objects;
 
-	//passed to the gameobjects for rendering
-	SDL_Renderer* _renderer;
-
 public:
 
 	//receives renderer so that it can load textures onto it
-	Game(SDL_Renderer* renderer);
+	Game();
 	~Game();
 
 	void gameLoop();

@@ -9,7 +9,7 @@ public:
 	Text();
 	~Text();
 
-	bool loadText(SDL_Renderer* renderer, std::string textureText, SDL_Color textColor,
+	bool loadText(std::string textureText, SDL_Color textColor,
 				SDL_Texture* texture, int* sx, int* sy);
 
 	//TODO: add functions for actually drawing the text

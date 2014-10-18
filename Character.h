@@ -18,9 +18,9 @@ public:
 	Character();
 	~Character();
 
-	void render(SDL_Renderer* renderer);
-	void init(SDL_Renderer* renderer, int x, int y, ObjectID type,
-				std::string texturePath, int spriteCount, int animationCount);
+	void render();
+	void init(int x, int y, ObjectID type, std::string texturePath, 
+				int spriteCount, int animationCount);
 
 protected:
 	Direction _currentDirection = Direction::Up;

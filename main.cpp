@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "Game.h"
+#include "draw.h"
 
 //Game constants
 const static int SCREEN_WIDTH = 1280;
@@ -44,29 +45,16 @@ bool init()
 			printf("Window could not be created. SDL_Error: %s\n", SDL_GetError());
 			success = false;
 		}
-		//SDL_CreateWindow succeeded
 		else
 		{
-			//Create renderer for window
-			renderer = SDL_CreateRenderer(window,-1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-			if (renderer == NULL)
-			{
-				printf("Renderer could not be created. SDL Error: %s\n", SDL_GetError());
-				success = false;
-			}
-			//SDL_CreateRenderer succeeded
-			else
-			{
-				//Initialize renderer color
-				SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xFF);
+			Draw::initRenderer(window, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-				//Initialize PNG loading
-				int imgFlags = IMG_INIT_PNG;
-				if (!(IMG_Init(imgFlags) & imgFlags))
-				{
-					printf("SDL_image could not initialize. SDL_image Error: %s\n", IMG_GetError());
-					success = false;
-				}
+			//Initialize PNG loading
+			int imgFlags = IMG_INIT_PNG;
+			if (!(IMG_Init(imgFlags) & imgFlags))
+			{
+				printf("SDL_image could not initialize. SDL_image Error: %s\n", IMG_GetError());
+				success = false;
 			}
 		}
 	}
@@ -100,7 +88,7 @@ int main(int argc, char *argv[])
 	SDL_Event e;
 
 	//Create main game class
-	Game game(renderer);
+	Game game;
 
 	//Game loop
 	bool quit = false;
@@ -113,14 +101,14 @@ int main(int argc, char *argv[])
 				quit = true;
 		}
 
-		SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xFF);
+		Draw::setRenderDrawColor(0x00, 0x00, 0x00, 0xFF);
 
-		SDL_RenderClear(renderer);
+		Draw::renderClear();
 		
 		//Main game processing (input, update, render)
 		game.gameLoop();
 
-		SDL_RenderPresent(renderer);
+		Draw::renderPresent();
 
 		//wait about 1/60 of a second
 		SDL_Delay(30);

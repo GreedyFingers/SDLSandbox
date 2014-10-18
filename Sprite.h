@@ -9,12 +9,12 @@ class Sprite
 	int _currentAnimationIndex;
 
 public:
-	Sprite(SDL_Renderer* renderer, std::string texturePath, int animationCount);
+	Sprite(std::string texturePath, int animationCount);
 	~Sprite();
 
 	void initAnimations(int animationCount);
 
-	bool render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip,
+	bool render(int x, int y, SDL_Rect* clip,
 		int clipIndex, int timeSinceLastDraw);
 
 	Animation getCurrentAnimation();

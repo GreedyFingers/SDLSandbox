@@ -5,8 +5,8 @@ Text::~Text()
 {
 }
 
-bool Text::loadText(SDL_Renderer* renderer, std::string textureText, SDL_Color textColor,
+bool Text::loadText(std::string textureText, SDL_Color textColor,
 					SDL_Texture* texture, int* sx, int* sy)
 {
-	return Draw::loadText(renderer, textureText, textColor, texture, sx, sy);
+	return Draw::loadText(textureText, textColor, texture, sx, sy);
 }

@@ -9,7 +9,7 @@ class Player : public Character
 {
 
 public:
-	Player(SDL_Renderer* renderer,int, int);
+	Player(int x, int y);
 	~Player();
 
 };

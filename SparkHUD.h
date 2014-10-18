@@ -6,8 +6,8 @@ class SparkHUD : public GameObject
 {
 	Texture _texture;
 public:
-	SparkHUD(SDL_Renderer* renderer, int x, int y);
+	SparkHUD(int x, int y);
 	~SparkHUD();
-	void render(SDL_Renderer* renderer);
+	void render();
 };
 

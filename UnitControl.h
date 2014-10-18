@@ -8,10 +8,10 @@ class UnitControl :
 {
 	Texture _texture;
 public:
-	UnitControl(SDL_Renderer* renderer,int x, int y);
+	UnitControl(int x, int y);
 	~UnitControl();
 	void input();
 	void update();
-	void render(SDL_Renderer* renderer);
+	void render();
 };
 

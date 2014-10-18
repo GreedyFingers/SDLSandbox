@@ -16,10 +16,9 @@ class Scout : public Automaton
 	State _currentState;
 
 public:
-	Scout(SDL_Renderer* renderer,int, int);
+	Scout(int, int);
 	~Scout();
 	void chooseRandomDirection();
 	void update();
-	void render(SDL_Renderer* renderer);
 };
 

@@ -18,8 +18,8 @@ public:
 
 	Texture();
 	~Texture();
-	void init(SDL_Renderer* renderer, std::string texturePath);
-	bool render(SDL_Renderer* renderer,int x, int y, SDL_Rect* clip, int clipIndex);
+	void init(std::string texturePath);
+	bool render(int x, int y, SDL_Rect* clip, int clipIndex);
 	void setAlpha(Uint8 alpha);
 };
 

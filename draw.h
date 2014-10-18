@@ -7,11 +7,19 @@
 
 class Draw
 {
+	static SDL_Renderer* _renderer;
 public:
-	static SDL_Texture* loadTexture(SDL_Renderer* renderer, std::string fileName);
-	static bool draw(SDL_Renderer *renderer, SDL_Texture* texture, int rendX,
+	static void initRenderer(SDL_Window* window, Uint32 flags );
+	static SDL_Texture* loadTexture(std::string fileName);
+	static bool draw(SDL_Texture* texture, int rendX,
 						int rendY, SDL_Rect* clip);
 	static bool setTransparentColor(SDL_Surface *target, int R, int G, int B);
-	static bool loadText(SDL_Renderer* renderer, std::string textureText, SDL_Color textColor,
+	static bool loadText(std::string textureText, SDL_Color textColor,
 							SDL_Texture* texture, int* sx, int* sy);
+	static void getRendererSize(int* rw, int* rh);
+	static void setRenderDrawColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
+	static void renderClear();
+	static void renderPresent();
+
+	//TODO: destroy renderer function
 };

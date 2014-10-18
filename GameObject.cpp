@@ -22,7 +22,7 @@ GameObject::~GameObject()
 }
 
 //initialize clips, object location, type, and texture
-void GameObject::init(SDL_Renderer* renderer, int x, int y, ObjectID type, int spriteCount)
+void GameObject::init(int x, int y, ObjectID type, int spriteCount)
 {
 	//Set location
 	_x = x;

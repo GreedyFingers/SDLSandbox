@@ -52,10 +52,10 @@ class GameObject
 		//Game logic members
 		virtual void input();
 		virtual void update();
-		virtual void render(SDL_Renderer* renderer) = 0;
+		virtual void render() = 0;
 
 		//initialize object
-		void init(SDL_Renderer* renderer,int x, int y, ObjectID type, int spriteCount);
+		void init(int x, int y, ObjectID type, int spriteCount);
 
 		//initialize texture clips
 		void initClips(int spriteCount);

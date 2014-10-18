@@ -20,15 +20,15 @@ void Texture::setAlpha(Uint8 alpha)
 	SDL_SetTextureAlphaMod(_texture, alpha);
 }
 
-bool Texture::render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip, int clipIndex)
+bool Texture::render(int x, int y, SDL_Rect* clip, int clipIndex)
 {
-	if (Draw::draw(renderer, _texture, x, y, &clip[clipIndex]) == false)
+	if (Draw::draw(_texture, x, y, &clip[clipIndex]) == false)
 		return true;
 	else
 		return false;
 }
 
-void Texture::init(SDL_Renderer* renderer, std::string texturePath)
+void Texture::init(std::string texturePath)
 {
-	_texture = Draw::loadTexture(renderer, texturePath);
+	_texture = Draw::loadTexture(texturePath);
 }

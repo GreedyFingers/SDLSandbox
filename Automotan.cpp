@@ -1,6 +1,6 @@
 #include "Automaton.h"
 
-
+//Non-player-controlled characters
 Automaton::Automaton()
 {
 }

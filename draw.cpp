@@ -2,7 +2,21 @@
 #include "draw.h"
 #include "Global_Assets.h"
 
-SDL_Texture* Draw::loadTexture(SDL_Renderer* renderer, std::string fileName)
+SDL_Renderer* Draw::_renderer;
+
+void Draw::initRenderer(SDL_Window* window, Uint32 flags)
+{
+	_renderer = SDL_CreateRenderer(window, -1, flags);
+	//Create renderer for window
+	if (_renderer == NULL)
+	{
+		printf("Renderer could not be created. SDL Error: %s\n", SDL_GetError());
+		//TODO: return false or something
+	}
+	//SDL_CreateRenderer succeeded
+}
+
+SDL_Texture* Draw::loadTexture(std::string fileName)
 {
 	//the final texture
 	SDL_Texture *newTexture = NULL;
@@ -16,7 +30,7 @@ SDL_Texture* Draw::loadTexture(SDL_Renderer* renderer, std::string fileName)
 	else
 	{
 		//Create texture from surface pixels
-		newTexture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
+		newTexture = SDL_CreateTextureFromSurface(_renderer, loadedSurface);
 		if (newTexture == NULL)
 			printf("Unable to create texture from %s. SDL Error: %s\n", fileName.c_str(), SDL_GetError());
 		else
@@ -26,20 +40,20 @@ SDL_Texture* Draw::loadTexture(SDL_Renderer* renderer, std::string fileName)
 	return newTexture;
 }
 
-bool Draw::draw(SDL_Renderer *renderer, SDL_Texture *texture, int rendX, int rendY, SDL_Rect* clip)
+bool Draw::draw(SDL_Texture *texture, int rendX, int rendY, SDL_Rect* clip)
 {
-	if (texture == NULL || renderer == NULL)
+	if (texture == NULL || _renderer == NULL)
 		return false;
 	SDL_Rect rendR;
 	rendR.x = rendX;
 	rendR.y = rendY;
 	rendR.w = clip->w;
 	rendR.h = clip->h;
-	SDL_RenderCopy(renderer, texture, clip, &rendR);
+	SDL_RenderCopy(_renderer, texture, clip, &rendR);
 	return true;
 }
 
-bool Draw::loadText(SDL_Renderer* renderer, std::string textureText, SDL_Color textColor,
+bool Draw::loadText(std::string textureText, SDL_Color textColor,
 					SDL_Texture* texture, int* sx, int* sy)
 {
 	bool drawSucceeded = false;
@@ -52,7 +66,7 @@ bool Draw::loadText(SDL_Renderer* renderer, std::string textureText, SDL_Color t
 	else
 	{
 		//Create texture from surface
-		texture = SDL_CreateTextureFromSurface(renderer, textureSurface);
+		texture = SDL_CreateTextureFromSurface(_renderer, textureSurface);
 		if (texture == NULL)
 		{
 			printf("Unable to create texture from rendererd text. SDL Error: %s\n", SDL_GetError());
@@ -76,4 +90,25 @@ bool Draw::setTransparentColor(SDL_Surface *target, int R, int G, int B)
 	SDL_SetColorKey(target, SDL_TRUE | SDL_RLEACCEL,
 		SDL_MapRGB(target->format, R, G, B));
 	return true;
+}
+
+void Draw::getRendererSize(int* rw, int* rh)
+{
+	SDL_GetRendererOutputSize(_renderer,rw, rh);
+}
+
+void Draw::setRenderDrawColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+{
+	//Set renderer color
+	SDL_SetRenderDrawColor(_renderer, r, g, b, a);
+}
+
+void Draw::renderClear()
+{
+	SDL_RenderClear(_renderer);
+}
+
+void Draw::renderPresent()
+{
+	SDL_RenderPresent(_renderer);
 }

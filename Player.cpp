@@ -1,11 +1,10 @@
 #include "Player.h"
 
-Player::Player(SDL_Renderer* renderer,int x, int y)
+Player::Player(int x, int y)
 {
 	_sx = Player_Assets::TEXTURE_SIZE_X;
 	_sy = Player_Assets::TEXTURE_SIZE_Y;
-	init(	renderer, 
-			x, 
+	init(	x, 
 			y, 
 			GameObject::Player, 
 			Player_Assets::TEXTURE_PATH,
