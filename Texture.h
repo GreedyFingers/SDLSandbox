@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include <SDL.h>
-#include <SDL_ttf.h>
 #include <string>
 #include "Clock.h"
 #include "Animation.h"

@@ -1,3 +1,4 @@
+#pragma once
 #include "Automaton.h"
 
 //Non-player-controlled characters

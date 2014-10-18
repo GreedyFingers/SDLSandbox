@@ -71,12 +71,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\include;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\include;C:\Users\Graham\Documents\Dev\SDL\SDL_ttf-2.0.11\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\include;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\lib\x86;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\lib\x86;C:\Users\Graham\Documents\Dev\SDL\SDL_ttf-2.0.11\lib\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL_ttf.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\lib\x86;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
       <SubSystem>Windows</SubSystem>
@@ -106,14 +106,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\include;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\include;C:\Users\Graham\Documents\Dev\SDL\SDL_ttf-2.0.11\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\include;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\lib\x86;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\lib\x86;C:\Users\Graham\Documents\Dev\SDL\SDL_ttf-2.0.11\lib\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL_ttf.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\lib\x86;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>

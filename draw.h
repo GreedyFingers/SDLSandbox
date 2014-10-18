@@ -3,7 +3,6 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <string>
-#include <SDL_ttf.h>
 
 class Draw
 {
@@ -11,7 +10,7 @@ class Draw
 public:
 	static void initRenderer(SDL_Window* window, Uint32 flags );
 	static SDL_Texture* loadTexture(std::string fileName);
-	static SDL_Texture* loadText(std::string textureText, SDL_Color textColor,
+	static void loadText(std::string textureText, SDL_Color textColor,
 									int* sx, int* sy);
 	static bool draw(SDL_Texture* texture, int rendX,
 						int rendY, SDL_Rect* clip);

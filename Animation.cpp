@@ -1,3 +1,4 @@
+#pragma once
 #include "Animation.h"
 
 //Until initialized, presume this animation has no frames

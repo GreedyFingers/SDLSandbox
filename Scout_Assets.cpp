@@ -1,3 +1,4 @@
+#pragma once
 #include "Scout_Assets.h"
 
 //Scout Assets

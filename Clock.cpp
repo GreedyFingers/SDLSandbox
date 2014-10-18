@@ -1,3 +1,4 @@
+#pragma once
 #include "Clock.h"
 #include <SDL.h>
 

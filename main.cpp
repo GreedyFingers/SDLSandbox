@@ -1,3 +1,4 @@
+#pragma once
 #include <SDL.h>
 #include <SDL_image.h>
 #include <stdbool.h>
@@ -55,14 +56,6 @@ bool init()
 			{
 				printf("SDL_image could not initialize. SDL_image Error: %s\n", IMG_GetError());
 				success = false;
-			}
-			else
-			{
-				if (TTF_Init() == -1)
-				{
-					printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
-					success = false;
-				}
 			}
 		}
 	}

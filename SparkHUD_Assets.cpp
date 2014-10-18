@@ -1,3 +1,4 @@
+#pragma once
 #include "SparkHUD_Assets.h"
 
 const char* SparkHUD_Assets::TEXTURE_PATH = "sparkHUD.png";

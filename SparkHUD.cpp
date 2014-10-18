@@ -1,3 +1,4 @@
+#pragma once
 #include "SparkHUD.h"
 #include "GameObject.h"
 #include "draw.h"

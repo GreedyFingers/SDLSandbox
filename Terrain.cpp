@@ -1,3 +1,4 @@
+#pragma once
 #include "Terrain.h"
 #include "draw.h"
 

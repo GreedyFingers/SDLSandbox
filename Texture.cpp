@@ -1,3 +1,4 @@
+#pragma once
 #include "Texture.h"
 #include "Draw.h"
 #include "Global_Assets.h"

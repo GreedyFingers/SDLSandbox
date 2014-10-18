@@ -53,7 +53,7 @@ bool Draw::draw(SDL_Texture *texture, int rendX, int rendY, SDL_Rect* clip)
 	return true;
 }
 
-SDL_Texture* Draw::loadText(std::string textureText, SDL_Color textColor,
+void Draw::loadText(std::string textureText, SDL_Color textColor,
 					int* sx, int* sy)
 {
 	//TODO: change to use OpenGL fonts or something

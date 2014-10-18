@@ -1,3 +1,4 @@
+#pragma once
 #include "Scout.h"
 #include "Physics.h"
 
