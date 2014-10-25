@@ -31,7 +31,7 @@ void GameObject::init(int x, int y, ObjectID type, int spriteCount)
 	_type = type;
 	
 	//Initialize sprites
-	initClips(spriteCount);
+	_clips = initClips(spriteCount);
 	_currentClip = _clips[0];
 	_currentClipIndex = 0;
 
@@ -40,22 +40,23 @@ void GameObject::init(int x, int y, ObjectID type, int spriteCount)
 }
 
 //Create clips for individual sprites within texture
-void GameObject::initClips(int spriteCount)
+SDL_Rect* GameObject::initClips(int spriteCount)
 {
-	_clips = (SDL_Rect*)malloc(sizeof(SDL_Rect)*spriteCount);
-	if (_clips == NULL)
+	SDL_Rect* clips = (SDL_Rect*)malloc(sizeof(SDL_Rect)*spriteCount);
+	if (clips == NULL)
 		printf("Error initializing clips for %s texture.\n", ObjectNames[_type]);
 	else
 	{
 		for (int i = 0; i < spriteCount; i++)
 		{
 			//offset first sprite by sprite size per rectangle
-			_clips[i].x = i * _sx;
-			_clips[i].y = 0;
-			_clips[i].w = _sx;
-			_clips[i].h = _sy;
+			clips[i].x = i * _sx;
+			clips[i].y = 0;
+			clips[i].w = _sx;
+			clips[i].h = _sy;
 		}
 	}
+	return clips;
 }
 
 void GameObject::input()

@@ -59,7 +59,7 @@ class GameObject
 		void init(int x, int y, ObjectID type, int spriteCount);
 
 		//initialize texture clips
-		void initClips(int spriteCount);
+		SDL_Rect* initClips(int spriteCount);
 
 		//initialize animation clips
 		void initAnimations(int animationCount);

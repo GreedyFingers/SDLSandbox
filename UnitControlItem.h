@@ -5,10 +5,10 @@ class UnitControlItem : public GameObject
 {
 	Texture _texture;
 public:
-	UnitControlItem();
+	UnitControlItem(int UnitControlX, int UnitControlY, 
+					int UnitControlSizeX, int positionInContainer);
 	~UnitControlItem();
 
-	void init(int x, int y, int size);
 	void render();
 };
 

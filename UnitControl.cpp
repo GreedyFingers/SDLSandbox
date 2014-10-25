@@ -21,9 +21,11 @@ UnitControl::UnitControl(int x, int y)
 
 	//Create items contained in this object
 	int itemMargin = UnitControl_Assets::ITEM_MARGIN;
-	UnitControlItem scoutItem;
-	scoutItem.init(itemMargin + x, itemMargin + y, _sx - (itemMargin * 2));
-
+	UnitControlItem* scoutItem = new UnitControlItem(x, y, _sx, 0);
+	_controlItems.push_back(scoutItem);
+	scoutItem = new UnitControlItem(x, y, _sx, 1);
+	_controlItems.push_back(scoutItem);
+	scoutItem = new UnitControlItem(x, y, _sx, 2);
 	_controlItems.push_back(scoutItem);
 }
 
@@ -47,6 +49,6 @@ void UnitControl::render()
 	_texture.render(_x, _y, _clips, _currentClipIndex);
 	for (auto &item : _controlItems)
 	{
-		item.render();
+		item->render();
 	}
 }

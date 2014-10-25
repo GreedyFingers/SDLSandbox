@@ -10,7 +10,7 @@ class UnitControl :
 {
 	Texture _texture;
 	
-	std::vector<UnitControlItem> _controlItems;
+	std::vector<UnitControlItem*> _controlItems;
 public:
 	UnitControl(int x, int y);
 	~UnitControl();
