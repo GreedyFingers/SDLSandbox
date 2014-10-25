@@ -1,7 +1,6 @@
 #pragma once
 
 #include "GameObject.h"
-#include "Draw.h"
 
 char* GameObject::ObjectNames[4] = {
 	"Player",

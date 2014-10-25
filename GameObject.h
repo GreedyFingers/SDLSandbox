@@ -6,6 +6,7 @@
 #include "Animation.h"
 #include "Clock.h"
 #include "Sprite.h"
+#include "Draw.h"
 
 class GameObject
 {

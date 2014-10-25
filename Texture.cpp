@@ -31,6 +31,5 @@ bool Texture::render(int x, int y, SDL_Rect* clip, int clipIndex)
 
 void Texture::setTexture(SDL_Texture* texture)
 {
-	SDL_DestroyTexture(_texture);
 	_texture = texture;
 }

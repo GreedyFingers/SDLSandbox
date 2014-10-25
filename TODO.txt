@@ -1,4 +1,8 @@
+-try catch c++
+
 -Move clips into texture object and set clipIndex to 0 by default
+
+-make parent UXControl object
 
 -make texture a possible standalone without animations
 
@@ -16,8 +20,6 @@
 
 -remove unneeded includes in classes
 
--make parent UXControl object
-
 -make animation begin call setCurrentAnimationIndex
 
 -Move draw calls to texture object (instead of in gameobjects)
@@ -25,3 +27,9 @@
 -document code in comments
 
 -use logSDLError
+
+-function pointers for UnitControlItems and abstract factory
+
+-cleanup and remove unused headers
+
+-move git repo up one folder

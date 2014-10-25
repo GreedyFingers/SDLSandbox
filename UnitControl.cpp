@@ -1,5 +1,8 @@
 #pragma once
+#include <algorithm>
+#include <functional>
 #include "UnitControl.h"
+#include "UnitControlItem.h"
 #include "draw.h"
 
 UnitControl::UnitControl(int x, int y)
@@ -11,14 +14,22 @@ UnitControl::UnitControl(int x, int y)
 			GameObject::UnitControl, 
 			UnitControl_Assets::SPRITE_COUNT
 		);
-	_currentClip = _clips[0];
-	//_sprite->setAlpha(128);
 
+	//Load this object's textures
 	_texture.setTexture(Draw::loadTexture(UnitControl_Assets::TEXTURE_PATH));
+	_texture.setAlpha(128);
+
+	//Create items contained in this object
+	int itemMargin = UnitControl_Assets::ITEM_MARGIN;
+	UnitControlItem scoutItem;
+	scoutItem.init(itemMargin + x, itemMargin + y, _sx - (itemMargin * 2));
+
+	_controlItems.push_back(scoutItem);
 }
 
 UnitControl::~UnitControl()
 {
+	_controlItems.clear();
 }
 
 void UnitControl::input()
@@ -34,4 +45,8 @@ void UnitControl::update()
 void UnitControl::render()
 {
 	_texture.render(_x, _y, _clips, _currentClipIndex);
+	for (auto &item : _controlItems)
+	{
+		item.render();
+	}
 }

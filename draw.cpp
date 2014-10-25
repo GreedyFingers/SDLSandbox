@@ -47,7 +47,7 @@ bool Draw::draw(SDL_Texture *texture, int rendX, int rendY, SDL_Rect* clip)
 	SDL_Rect rendR;
 	rendR.x = rendX;
 	rendR.y = rendY;
-	rendR.w = clip->w;
+	rendR.w = clip->w; //to resize texture on screen, these values must be changed
 	rendR.h = clip->h;
 	SDL_RenderCopy(_renderer, texture, clip, &rendR);
 	return true;

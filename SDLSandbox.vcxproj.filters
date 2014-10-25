@@ -108,6 +108,12 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="UnitControlItem.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitControlItem_Assets.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="draw.h">
@@ -176,6 +182,12 @@
     <ClInclude Include="Sprite.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
+    <ClInclude Include="UnitControlItem.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitControlItem_Assets.h">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="bulbasaur.bmp">
@@ -191,6 +203,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="sparkHUD.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="unitcontrolitem.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

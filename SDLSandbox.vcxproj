@@ -159,6 +159,8 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="UnitControl.cpp" />
+    <ClCompile Include="UnitControlItem.cpp" />
+    <ClCompile Include="UnitControlItem_Assets.cpp" />
     <ClCompile Include="UnitControl_Assets.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +185,8 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Clock.h" />
     <ClInclude Include="UnitControl.h" />
+    <ClInclude Include="UnitControlItem.h" />
+    <ClInclude Include="UnitControlItem_Assets.h" />
     <ClInclude Include="UnitControl_Assets.h" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +195,7 @@
     <Image Include="sparkHUD.png" />
     <Image Include="terrain.png" />
     <Image Include="unitcontrol.png" />
+    <Image Include="unitcontrolitem.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="ff_font.ttf" />
