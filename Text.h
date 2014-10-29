@@ -12,7 +12,6 @@ public:
 
 	void loadText(std::string textureText, SDL_Color textColor,
 					int sx, int sy);
-	void render(int x, int y);
 	//TODO: add functions for actually drawing the text
 };
 

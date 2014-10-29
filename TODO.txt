@@ -1,13 +1,3 @@
--try catch c++
-
--Move clips into texture object and set clipIndex to 0 by default
-
--make parent UXControl object
-
--make texture a possible standalone without animations
-
--Move initializations to init functions instead of constructors.
-
 -Make x and y for GameObjects the center
 
 -Error handling on mallocs.
@@ -33,3 +23,9 @@
 -cleanup and remove unused headers
 
 -move git repo up one folder
+
+-Make wrapper for SDL_Event
+
+-redo constructors as method() : p1(0), p2(0) syntax
+
+-rename scout directions to be more about the possible texture clips

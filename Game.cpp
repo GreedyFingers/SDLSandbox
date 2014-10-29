@@ -55,16 +55,12 @@ Game::~Game()
 //Loop through vector of GameObjects and run the appropriate functions for each
 void Game::gameLoop()
 {
-	for_each(_objects.begin(), _objects.end(), std::bind1st(std::mem_fun(&Game::input),this));
+	//TODO: use same for loop that UnitControl uses
+	_inputHandler.handleInput();
 
 	for_each(_objects.begin(), _objects.end(), std::bind1st(std::mem_fun(&Game::update), this));
 
 	for_each(_objects.begin(), _objects.end(), std::bind1st(std::mem_fun(&Game::render), this));
-}
-
-void Game::input(GameObject* object)
-{
-	object->input();
 }
 
 void Game::update(GameObject* object)
@@ -75,4 +71,9 @@ void Game::update(GameObject* object)
 void Game::render(GameObject* object)
 {
 	object->render();
+}
+
+void Game::selectObject(int x, int y)
+{
+
 }

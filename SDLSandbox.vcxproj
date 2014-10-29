@@ -79,7 +79,7 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -114,7 +114,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\lib\x86;C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\lib\x86</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,6 +139,8 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Global_Assets.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="Item_Scout.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="PlayerAssets.cpp" />
     <ClCompile Include="Character.cpp" />
@@ -166,6 +168,8 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Global_Assets.h" />
+    <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="Item_Scout.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Player_Assets.h" />
     <ClInclude Include="Character.h" />

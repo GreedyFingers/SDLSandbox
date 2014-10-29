@@ -18,8 +18,3 @@ void Text::loadText(std::string textureText, SDL_Color textColor,
 	_clip.w = sx;
 	_clip.h = sy;
 }
-
-void Text::render(int x, int y)
-{
-	_texture.render(x, y, &_clip);
-}

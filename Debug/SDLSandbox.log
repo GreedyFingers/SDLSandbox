@@ -1,11 +1,13 @@
-﻿Build started 10/25/2014 5:45:04 PM.
+﻿Build started 10/28/2014 11:01:44 PM.
      1>Project "C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\SDLSandbox\SDLSandbox.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\include" /I"C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt UnitControl.cpp
-         UnitControl.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\include" /I"C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Item_Scout.cpp
+         Item_Scout.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\lib\x86" /LIBPATH:"C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\lib\x86" SDL2.lib SDL2main.lib SDL2_image.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.lib" /MACHINE:X86 Debug\Animation.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\lib\x86" /LIBPATH:"C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\lib\x86" SDL2.lib SDL2main.lib SDL2_image.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.lib" /MACHINE:X86 Debug\Animation.obj
          Debug\Global_Assets.obj
+         Debug\InputHandler.obj
+         Debug\Item_Scout.obj
          Debug\Sprite.obj
          Debug\PlayerAssets.obj
          Debug\Character.obj
@@ -34,4 +36,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.92
+Time Elapsed 00:00:00.80

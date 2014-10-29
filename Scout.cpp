@@ -4,20 +4,26 @@
 
 Scout::Scout(int x, int y)
 {
-	_sx = Scout_Assets::TEXTURE_SIZE_X;
-	_sy = Scout_Assets::TEXTURE_SIZE_Y;
 	init(	x, 
 			y, 
 			GameObject::Scout, 
 			Scout_Assets::TEXTURE_PATH,
 			Scout_Assets::SPRITE_COUNT,
-			Scout_Assets::ANIMATION_COUNT
+			Scout_Assets::ANIMATION_COUNT,
+			Scout_Assets::TEXTURE_SIZE_X,
+			Scout_Assets::TEXTURE_SIZE_Y
 		);
 
-	_sprite->getAnimations()[Scout_Assets::ANIMATIONS::NONE].init(Scout_Assets::NO_ANIMATION,
-		sizeof(Scout_Assets::NO_ANIMATION));
-	_sprite->getAnimations()[Scout_Assets::ANIMATIONS::MOVING].init(Scout_Assets::MOVING_ANIMATION,
-		sizeof(Scout_Assets::MOVING_ANIMATION));
+	_sprite->getAnimations()[Scout_Assets::ANIMATIONS::NONE].init
+		(
+			Scout_Assets::NO_ANIMATION,
+			sizeof(Scout_Assets::NO_ANIMATION)
+		);
+	_sprite->getAnimations()[Scout_Assets::ANIMATIONS::MOVING].init
+		(
+			Scout_Assets::MOVING_ANIMATION,
+			sizeof(Scout_Assets::MOVING_ANIMATION)
+		);
 
 	_nextActionTime = SDL_GetTicks() + _movementCooldown;
 

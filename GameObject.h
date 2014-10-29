@@ -7,6 +7,7 @@
 #include "Clock.h"
 #include "Sprite.h"
 #include "Draw.h"
+#include "Global_Assets.h"
 
 class GameObject
 {
@@ -33,9 +34,7 @@ class GameObject
 		int _sx, _sy;
 
 		//Sprite clips
-		SDL_Rect* _clips;
-		SDL_Rect _currentClip;
-		int _currentClipIndex;
+		int _currentTextureClip = Global_Assets::ENTIRE_TEXTURE;
 
 		//Time synchronization information
 		Clock _clock;
@@ -51,12 +50,12 @@ class GameObject
 		~GameObject();
 
 		//Game logic members
-		virtual void input();
+		virtual void select();
 		virtual void update();
 		virtual void render() = 0;
 
 		//initialize object
-		void init(int x, int y, ObjectID type, int spriteCount);
+		void init(int x, int y, ObjectID type, int sx, int sy);
 
 		//initialize texture clips
 		SDL_Rect* initClips(int spriteCount);

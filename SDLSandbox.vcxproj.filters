@@ -114,6 +114,12 @@
     <ClCompile Include="UnitControlItem_Assets.cpp">
       <Filter>Source Files\Assets</Filter>
     </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item_Scout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="draw.h">
@@ -187,6 +193,12 @@
     </ClInclude>
     <ClInclude Include="UnitControlItem_Assets.h">
       <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item_Scout.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -25,7 +25,7 @@ public:
 
 	//overrides GameObject::init()
 	void init(int x, int y, ObjectID type, std::string texturePath, 
-				int spriteCount, int animationCount);
+				int spriteCount, int animationCount, int sx, int sy);
 
 protected:
 	Direction _currentDirection = Direction::Up;
