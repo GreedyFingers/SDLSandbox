@@ -9,17 +9,16 @@
 
 Game::Game()
 {
+	
 	//renderer width and height, so that the GameObjects know where they will be drawing
 	int rw;
 	int rh;
 
 	//Initialize common assets
 	Draw::getRendererSize(&rw, &rh);
+	Physics::initPhysics(Draw::getRWNormalized(), Draw::getRHNormalized());
 
 	_gameState = new Combat_GameState(rw, rh);
-
-	//Create event handler
-	_eventQueue = new EventQueue(inputHandler);
 
 }
 
@@ -32,7 +31,7 @@ bool Game::gameLoop()
 {
 	bool quit = false;
 	//TODO: use same for loop that UnitControl uses
-	quit = _eventQueue->eventLoop();
+	//quit = _eventQueue->eventLoop();
 
 	_gameState->update();
 	_gameState->render();

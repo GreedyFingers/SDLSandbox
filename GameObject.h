@@ -39,9 +39,6 @@ class GameObject
 		//Time synchronization information
 		Clock _clock;
 
-		//slows down GameObjects specifically
-		int _damping = 50;
-
 		//flag to remove
 		bool _remove;
 

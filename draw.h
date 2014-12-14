@@ -7,6 +7,7 @@
 class Draw
 {
 	static SDL_Renderer* _renderer;
+
 public:
 	static void initRenderer(SDL_Window* window, Uint32 flags );
 	static SDL_Texture* loadTexture(std::string fileName);
@@ -19,6 +20,9 @@ public:
 	static void setRenderDrawColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 	static void renderClear();
 	static void renderPresent();
+
+	static float getRWNormalized();
+	static float getRHNormalized();
 
 	//TODO: destroy renderer function
 };

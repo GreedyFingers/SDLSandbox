@@ -64,8 +64,7 @@ void Scout::update()
 			}
 			else
 			{
-				_x += (int)(_speed * _vx * ((float)_clock.getTimeSinceLastUpdate() / _damping));
-				_y += (int)(_speed * _vy * ((float)_clock.getTimeSinceLastUpdate() / _damping));
+				Physics::moveUnit(&_x, &_y, _vx, _vy, _speed, (float)_clock.getTimeSinceLastUpdate());
 			}
 			break;
 	}

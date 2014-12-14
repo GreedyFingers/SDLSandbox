@@ -4,11 +4,13 @@
 #include <SDL.h>
 #include "GameObject.h"
 #include "Player.h"
+#include "EventQueue.h"
+#include "Combat_GameState.h"
 
 class Game
 {
-	Combat_GameState *_gameState;
-	EventQueue* _eventQueue;
+	EventQueue *_eventQueue = NULL;
+	Combat_GameState *_gameState = NULL;
 
 public:
 

@@ -1,4 +1,6 @@
--separate inputhandler from gamestateobject
+-make game support multiple screen sizes
+
+-rename object to start with type (eg: GameState_Combat)
 
 -make object manager independent of game state, put it and inputhandler in game state class
 

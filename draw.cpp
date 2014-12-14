@@ -3,10 +3,16 @@
 #include "Global_Assets.h"
 
 SDL_Renderer* Draw::_renderer;
+static float _rwNormalized;
+static float _rhNormalized;
 
 void Draw::initRenderer(SDL_Window* window, Uint32 flags)
 {
 	_renderer = SDL_CreateRenderer(window, -1, flags);
+	int rw, rh;
+	Draw::getRendererSize(&rw, &rh);
+	_rwNormalized = rw / 800.0;
+	_rhNormalized = rh / 600.0;
 	//Create renderer for window
 	if (_renderer == NULL)
 	{
@@ -47,8 +53,8 @@ bool Draw::draw(SDL_Texture *texture, int rendX, int rendY, SDL_Rect* clip)
 	SDL_Rect rendR;
 	rendR.x = rendX;
 	rendR.y = rendY;
-	rendR.w = clip->w; //to resize texture on screen, these values must be changed
-	rendR.h = clip->h;
+	rendR.w = (int)(clip->w)*(_rwNormalized); //to resize texture on screen, these values must be changed
+	rendR.h = (int)(clip->h)*(_rhNormalized);
 	SDL_RenderCopy(_renderer, texture, clip, &rendR);
 	return true;
 }
@@ -87,4 +93,14 @@ void Draw::renderClear()
 void Draw::renderPresent()
 {
 	SDL_RenderPresent(_renderer);
+}
+
+float Draw::getRWNormalized()
+{
+	return _rwNormalized;
+}
+
+float Draw::getRHNormalized()
+{
+	return _rhNormalized;
 }

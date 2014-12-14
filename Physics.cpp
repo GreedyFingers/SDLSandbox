@@ -4,8 +4,11 @@
 #include <stdio.h>
 #include <math.h>
 #include "Physics.h"
+#include "Global_Assets.h"
 #include "Character.h"
 
+static float _rwNormalized;
+static float _rhNormalized;
 
 Physics::Physics()
 {
@@ -14,6 +17,12 @@ Physics::Physics()
 
 Physics::~Physics()
 {
+}
+
+void Physics::initPhysics(float rwNormalized, float rhNormalized)
+{
+	_rwNormalized = rwNormalized;
+	_rwNormalized = rhNormalized;
 }
 
 //Will always make character go maximum possible distance / speed
@@ -76,4 +85,10 @@ bool Physics::checkCollision(GameObject* object, int x, int y)
 		&& y > object->getY()
 		&& y < object->getY() + object->getSY()
 		);
+}
+
+void Physics::moveUnit(int *x, int *y, float vx, float vy, float speed, float timeSinceUpdate)
+{
+	*x += (int)(speed * vx * timeSinceUpdate / Global_Assets::_damping);
+	*y += (int)(speed * vy * timeSinceUpdate / Global_Assets::_damping);
 }

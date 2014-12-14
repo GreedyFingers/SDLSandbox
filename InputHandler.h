@@ -2,9 +2,9 @@
 
 class InputHandler
 {
-		Game* _game;
+
 	public:
-		InputHandler(Game* game);
+		InputHandler();
 		~InputHandler();
 
 		void mouseClick(int x, int y);

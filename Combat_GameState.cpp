@@ -10,12 +10,12 @@
 Combat_GameState::Combat_GameState(int rw, int rh)
 {
 
-	InputHandler* inputHandler = new InputHandler(this);
+	InputHandler* inputHandler = new InputHandler();
 	//Make some objects for start of game
-	Player *player = new Player(600, rh - 50);
-	Scout *scout1 = new Scout(400, rh - 300);
-	Scout *scout2 = new Scout(600, rh - 300);
-	Scout *scout3 = new Scout(800, rh - 300);
+	Player *player = new Player(rw/2, rh - 50);
+	Scout *scout1 = new Scout((rw/5)*2, rh - 300);
+	Scout *scout2 = new Scout((rw / 5) * 3, rh - 300);
+	Scout *scout3 = new Scout((rw / 5) * 4, rh - 300);
 
 	//Menus
 	UnitControl *control1 = new UnitControl(0, 0);
@@ -60,10 +60,10 @@ void Combat_GameState::update()
 void Combat_GameState::render()
 {
 	for (auto &object : _objects)
-		object->update();
+		object->render();
 }
 
-InputHandler Combat_GameState::getInputHandler()
+InputHandler* Combat_GameState::getInputHandler()
 {
 	return _inputHandler;
 }

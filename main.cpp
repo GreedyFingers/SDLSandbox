@@ -9,7 +9,7 @@
 
 //Game constants
 const static int SCREEN_WIDTH = 1280;
-const static int SCREEN_HEIGHT = 760;
+const static int SCREEN_HEIGHT = 720;
 
 //SDL window handles
 SDL_Window* window = NULL;
@@ -84,9 +84,6 @@ int main(int argc, char *argv[])
 	//Initialize SDL and window 
 	if (!init())
 		printf("Failed to initialize.\n");
-
-	//TODO: rewrite as an adapter class
-	SDL_Event e;
 
 	//Create main game class
 	Game game;

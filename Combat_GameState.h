@@ -16,6 +16,6 @@ public:
 	void update();
 	void render();
 
-	InputHandler getInputHandler();
+	InputHandler* getInputHandler();
 };
 
