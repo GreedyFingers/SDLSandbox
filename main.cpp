@@ -98,19 +98,12 @@ int main(int argc, char *argv[])
 	while (!quit)
 	{
 
-		//process all inputs
-		while (SDL_PollEvent(&e) != 0)
-		{
-			if (e.type == SDL_QUIT)
-				quit = true;
-		}
-
 		Draw::setRenderDrawColor(0x00, 0x00, 0x00, 0xFF);
 
 		Draw::renderClear();
 		
 		//Main game processing (input, update, render)
-		game.gameLoop();
+		quit = game.gameLoop();
 
 		Draw::renderPresent();
 

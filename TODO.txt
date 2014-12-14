@@ -1,3 +1,7 @@
+-separate inputhandler from gamestateobject
+
+-make object manager independent of game state, put it and inputhandler in game state class
+
 -Make x and y for GameObjects the center
 
 -Error handling on mallocs.
@@ -20,7 +24,7 @@
 
 -function pointers for UnitControlItems and abstract factory
 
--cleanup and remove unused headers
+-cleanup and remove unused headers / includes
 
 -move git repo up one folder
 
@@ -29,3 +33,5 @@
 -redo constructors as method() : p1(0), p2(0) syntax
 
 -rename scout directions to be more about the possible texture clips
+
+-Make EventQueue a static class

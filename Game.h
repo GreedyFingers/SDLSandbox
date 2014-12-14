@@ -4,13 +4,11 @@
 #include <SDL.h>
 #include "GameObject.h"
 #include "Player.h"
-#include "InputHandler.h"
 
 class Game
 {
-	//All game objects to loop through
-	std::vector<GameObject*> _objects;
-	InputHandler _inputHandler;
+	Combat_GameState *_gameState;
+	EventQueue* _eventQueue;
 
 public:
 
@@ -18,7 +16,7 @@ public:
 	Game();
 	~Game();
 
-	void gameLoop();
+	bool gameLoop();
 
 	//three methods which are repeatedly called for each GameObject
 	void selectObject(int x, int y);

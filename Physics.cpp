@@ -17,7 +17,7 @@ Physics::~Physics()
 }
 
 //Will always make character go maximum possible distance / speed
-void Physics::ChooseRandomDirection(float* vx, float *vy)
+void Physics::ChooseRandomDirection(float* vx, float* vy)
 {
 	float tempX;
 	float tempY;
@@ -50,4 +50,30 @@ Character::Direction Physics::DetermineDirection(float vx, float vy)
 			return Character::Direction::Down;
 		else
 			return Character::Direction::Up;
+}
+
+bool Physics::checkCollision(GameObject* object1, GameObject* object2)
+{
+	return
+		(
+		//object1's right side to the right of object2's left side
+		((object1->getX() + object1->getSX()) > object2->getX())
+		//object1's bottom side below object2's top
+		&& ((object1->getY() + object2->getSY()) > object2->getY())
+		//object1's left side to the left of object2's right side
+		&& (object1->getX() < (object2->getX() + object2->getSX()))
+		//object1's top above object2's bottom
+		&& (object1->getY() < (object2->getY() + object2->getSY()))
+		);
+}
+
+bool Physics::checkCollision(GameObject* object, int x, int y)
+{
+	return
+		(
+		x > object->getX()
+		&& x < object->getX() + object->getSX()
+		&& y > object->getY()
+		&& y < object->getY() + object->getSY()
+		);
 }

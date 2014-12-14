@@ -1,10 +1,12 @@
 #pragma once
+
 class InputHandler
 {
-public:
-	InputHandler();
-	~InputHandler();
+		Game* _game;
+	public:
+		InputHandler(Game* game);
+		~InputHandler();
 
-	void handleInput();
+		void mouseClick(int x, int y);
 };
 

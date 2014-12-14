@@ -52,7 +52,7 @@ class GameObject
 		//Game logic members
 		virtual void select();
 		virtual void update();
-		virtual void render() = 0;
+		virtual void render();
 
 		//initialize object
 		void init(int x, int y, ObjectID type, int sx, int sy);
@@ -68,6 +68,9 @@ class GameObject
 		int getY();
 		int getSX();
 		int getSY();
+
+		//extensions
+		bool containsPoint(int x, int y);
 
 		ObjectID getType();
 };

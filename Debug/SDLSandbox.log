@@ -1,39 +1,71 @@
-﻿Build started 10/28/2014 11:01:44 PM.
-     1>Project "C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\SDLSandbox\SDLSandbox.vcxproj" on node 2 (Build target(s)).
+﻿Build started 11/11/2014 10:32:52 PM.
+     1>Project "C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\SDLSandbox\SDLSandbox.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\include" /I"C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Item_Scout.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\include" /I"C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Animation.cpp EventQueue.cpp Global_Assets.cpp InputHandler.cpp Item_Scout.cpp Sprite.cpp PlayerAssets.cpp Character.cpp draw.cpp Automotan.cpp Game.cpp GameObject.cpp main.cpp Physics.cpp Player.cpp Scout.cpp Scout_Assets.cpp SparkHUD.cpp SparkHUD_Assets.cpp Terrain.cpp Terrain_Assets.cpp Text.cpp Texture.cpp Clock.cpp UnitControl.cpp UnitControlItem.cpp UnitControlItem_Assets.cpp UnitControl_Assets.cpp
+         UnitControl_Assets.cpp
+         UnitControlItem_Assets.cpp
+         UnitControlItem.cpp
+         UnitControl.cpp
+         Clock.cpp
+         Texture.cpp
+         Text.cpp
+         Terrain_Assets.cpp
+         Terrain.cpp
+         SparkHUD_Assets.cpp
+         SparkHUD.cpp
+         Scout_Assets.cpp
+         Scout.cpp
+         Player.cpp
+         Physics.cpp
+         main.cpp
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\game.h(13): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\game.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+         GameObject.cpp
+         Game.cpp
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\game.h(13): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\game.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\game.cpp(31): error C2065: '_eventQueue' : undeclared identifier
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\game.cpp(69): error C2065: '_eventQueue' : undeclared identifier
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\game.cpp(69): error C2228: left of '.eventLoop' must have class/struct/union
+                 type is 'unknown-type'
+         Automotan.cpp
+         draw.cpp
+         Generating Code...
+         Compiling...
+         Character.cpp
+         PlayerAssets.cpp
+         Sprite.cpp
          Item_Scout.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Graham\Documents\Dev\SDL\SDL2-2.0.3\lib\x86" /LIBPATH:"C:\Users\Graham\Documents\Dev\SDL\SDL2_image-2.0.0\lib\x86" SDL2.lib SDL2main.lib SDL2_image.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.lib" /MACHINE:X86 Debug\Animation.obj
-         Debug\Global_Assets.obj
-         Debug\InputHandler.obj
-         Debug\Item_Scout.obj
-         Debug\Sprite.obj
-         Debug\PlayerAssets.obj
-         Debug\Character.obj
-         Debug\draw.obj
-         Debug\Automotan.obj
-         Debug\Game.obj
-         Debug\GameObject.obj
-         Debug\main.obj
-         Debug\Physics.obj
-         Debug\Player.obj
-         Debug\Scout.obj
-         Debug\Scout_Assets.obj
-         Debug\SparkHUD.obj
-         Debug\SparkHUD_Assets.obj
-         Debug\Terrain.obj
-         Debug\Terrain_Assets.obj
-         Debug\Text.obj
-         Debug\Texture.obj
-         Debug\Clock.obj
-         Debug\UnitControl.obj
-         Debug\UnitControlItem.obj
-         Debug\UnitControlItem_Assets.obj
-         Debug\UnitControl_Assets.obj
-         SDLSandbox.vcxproj -> C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\Debug\SDLSandbox.exe
-     1>Done Building Project "C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\SDLSandbox\SDLSandbox.vcxproj" (Build target(s)).
+         InputHandler.cpp
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.h(5): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.h(5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.h(7): error C2061: syntax error : identifier 'Game'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\game.h(13): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\game.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.cpp(6): error C2511: 'InputHandler::InputHandler(Game *)' : overloaded member function not found in 'InputHandler'
+                 c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.h(4) : see declaration of 'InputHandler'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.cpp(7): error C2065: '_game' : undeclared identifier
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.cpp(16): error C2065: '_game' : undeclared identifier
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.cpp(16): error C2227: left of '->selectObject' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+         Global_Assets.cpp
+         EventQueue.cpp
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\eventqueue.h(7): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\eventqueue.h(7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\eventqueue.h(10): error C2061: syntax error : identifier 'InputHandler'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.h(5): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.h(5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\inputhandler.h(7): error C2061: syntax error : identifier 'Game'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\eventqueue.cpp(6): error C2511: 'EventQueue::EventQueue(InputHandler *)' : overloaded member function not found in 'EventQueue'
+                 c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\eventqueue.h(5) : see declaration of 'EventQueue'
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\eventqueue.cpp(7): error C2065: '_inputHandler' : undeclared identifier
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\eventqueue.cpp(25): error C2065: '_inputHandler' : undeclared identifier
+     1>c:\users\graham\documents\dev\sdl\sdlsandbox\sdlsandbox\eventqueue.cpp(25): error C2227: left of '->mouseClick' must point to class/struct/union/generic type
+                 type is 'unknown-type'
+         Animation.cpp
+         Generating Code...
+     1>Done Building Project "C:\Users\Graham\Documents\Dev\SDL\SDLSandbox\SDLSandbox\SDLSandbox.vcxproj" (Rebuild target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.80
+Time Elapsed 00:00:09.99

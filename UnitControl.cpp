@@ -28,8 +28,6 @@ UnitControl::UnitControl(int x, int y)
 	_controlItems.push_back(scoutItem);
 	scoutItem = new UnitControlItem(x, y, _sx, 1);
 	_controlItems.push_back(scoutItem);
-	scoutItem = new UnitControlItem(x, y, _sx, 2);
-	_controlItems.push_back(scoutItem);
 }
 
 UnitControl::~UnitControl()

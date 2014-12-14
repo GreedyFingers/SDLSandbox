@@ -138,6 +138,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Combat_GameState.cpp" />
+    <ClCompile Include="EventQueue.cpp" />
     <ClCompile Include="Global_Assets.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Item_Scout.cpp" />
@@ -167,6 +169,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Combat_GameState.h" />
+    <ClInclude Include="EventQueue.h" />
     <ClInclude Include="Global_Assets.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Item_Scout.h" />

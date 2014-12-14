@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameObject.h"
+#include "Physics.h"
 
 char* GameObject::ObjectNames[4] = {
 	"Player",
@@ -45,6 +46,11 @@ void GameObject::update()
 	_clock.setTimeSinceLastUpdate(SDL_GetTicks());
 }
 
+void GameObject::render()
+{
+
+}
+
 //positional getters
 int GameObject::getX()
 {
@@ -70,4 +76,9 @@ int GameObject::getSY()
 GameObject::ObjectID GameObject::getType()
 {
 	return _type;
+}
+
+bool GameObject::containsPoint(int x, int y)
+{
+	return Physics::checkCollision(this, x, y);
 }
