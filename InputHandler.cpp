@@ -2,8 +2,9 @@
 #include "InputHandler.h"
 #include "Game.h"
 
-InputHandler::InputHandler()
+InputHandler::InputHandler(GameObject_Manager *objectManager)
 {
+	_objectManager = objectManager;
 }
 
 InputHandler::~InputHandler()
@@ -12,5 +13,5 @@ InputHandler::~InputHandler()
 
 void InputHandler::mouseClick(int x, int y)
 {
-	//_game->selectObject(x, y);
+	_objectManager->selectObject(x, y);
 }

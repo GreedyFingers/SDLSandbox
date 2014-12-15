@@ -19,16 +19,16 @@ class GameObject
 			Scout,
 			UnitControl,
 			SparkHUD,
-			Terrain
+			Terrain,
+			ScoutItem
 		};
 
-		static char* ObjectNames[5];
-
-	private:
-		//this object's type
-		ObjectID _type;
+		static char* ObjectNames[6];
 
 	protected:
+
+		//this object's type
+		ObjectID _type;
 
 		//Position information
 		int _x, _y;
@@ -40,6 +40,8 @@ class GameObject
 		//Time synchronization information
 		Clock _clock;
 
+		bool _selectable = false;
+
 		//flag to remove
 		bool _remove;
 
@@ -48,7 +50,7 @@ class GameObject
 		~GameObject();
 
 		//Game logic members
-		virtual void select();
+		virtual GameObject::ObjectID select(int x, int y);
 		virtual void update();
 		virtual void render();
 

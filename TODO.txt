@@ -1,3 +1,7 @@
+-use callbacks and function pointers for telling object manager what to do
+
+-reorganize files
+
 -make game support multiple screen sizes
 
 -rename object to start with type (eg: GameState_Combat)

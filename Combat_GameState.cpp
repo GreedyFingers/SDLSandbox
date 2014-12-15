@@ -6,14 +6,11 @@
 Combat_GameState::Combat_GameState()
 {
 
-	InputHandler* inputHandler = new InputHandler();
 	_objectManager = new GameObject_Manager();
+	_inputHandler = new InputHandler(_objectManager);
 	//Make some objects for start of game
 	_objectManager->createObject(GameObject::Terrain, 200, 0);
 	_objectManager->createObject(GameObject::Player, 400, 550);
-	_objectManager->createObject(GameObject::Scout, 300, 300);
-	_objectManager->createObject(GameObject::Scout, 400, 300);
-	_objectManager->createObject(GameObject::Scout, 500, 300);
 	_objectManager->createObject(GameObject::UnitControl, 0, 0);
 	_objectManager->createObject(	GameObject::SparkHUD, 
 									UnitControl_Assets::TEXTURE_W + 5, 

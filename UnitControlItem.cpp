@@ -27,7 +27,7 @@ void UnitControlItem::init(int UnitControlX, int UnitControlY,
 			+ (UnitControl_Assets::ITEM_MARGIN + (UnitControl_Assets::ITEM_MARGIN * positionInContainer))
 			+ (size*positionInContainer);
 
-	__super::init(x, y, GameObject::UnitControl, size, size);
+	__super::init(x, y, _type, size, size);
 
 	_texture.setTexture(Draw::loadTexture(UnitControlItem_Assets::TEXTURE_PATH), 
 						UnitControlItem_Assets::SPRITE_COUNT, _sx, _sy);

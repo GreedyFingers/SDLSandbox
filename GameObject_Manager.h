@@ -15,5 +15,6 @@ public:
 	void render();
 
 	void createObject(GameObject::ObjectID type, int x, int y);
+	void execute(GameObject::ObjectID type);
 };
 

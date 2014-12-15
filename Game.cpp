@@ -19,6 +19,7 @@ Game::Game()
 	Physics::initPhysics(Draw::getRWNormalized(), Draw::getRHNormalized());
 
 	_gameState = new Combat_GameState();
+	_eventQueue = new EventQueue(_gameState->getInputHandler());
 
 }
 

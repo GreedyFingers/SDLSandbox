@@ -35,15 +35,21 @@ UnitControl::~UnitControl()
 	_controlItems.clear();
 }
 
-void UnitControl::input()
-{
-
-}
-
 void UnitControl::update()
 {
 
 }
+
+GameObject::ObjectID UnitControl::select(int x, int y)
+{
+	for (auto &object : _controlItems)
+	{
+		if (object->containsPoint(x, y))
+			return object->getType();
+	}
+	return _type;
+}
+
 
 void UnitControl::render()
 {

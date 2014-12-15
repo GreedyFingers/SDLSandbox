@@ -12,6 +12,5 @@ public:
 
 	GameObject_Manager* getGameObject_Manager();
 	InputHandler* getInputHandler();
-
 };
 

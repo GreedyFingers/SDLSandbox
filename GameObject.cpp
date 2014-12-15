@@ -3,12 +3,13 @@
 #include "GameObject.h"
 #include "Physics.h"
 
-char* GameObject::ObjectNames[5] = {
+char* GameObject::ObjectNames[6] = {
 	"Player",
 	"Scout",
 	"UnitControl",
 	"SparkHUD",
-	"Terrain"
+	"Terrain",
+	"ScoutItem"
 };
 
 GameObject::GameObject()
@@ -36,9 +37,9 @@ void GameObject::init(int x, int y, ObjectID type, int sx, int sy)
 	_remove = false;
 }
 
-void GameObject::select()
+GameObject::ObjectID GameObject::select(int x, int y)
 {
-
+	return _type;
 }
 
 //base update called to determine when this GameObject was last updated

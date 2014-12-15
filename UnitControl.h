@@ -8,13 +8,14 @@
 class UnitControl :
 	public GameObject
 {
+
 	Texture _texture;
 	
 	std::vector<UnitControlItem*> _controlItems;
 public:
 	UnitControl(int x, int y);
 	~UnitControl();
-	void input();
+	GameObject::ObjectID select(int x, int y);
 	void update();
 	void render();
 };

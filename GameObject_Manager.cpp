@@ -24,7 +24,10 @@ void GameObject_Manager::selectObject(int x, int y)
 	for (auto &object : _objects)
 	{
 		if (object->containsPoint(x, y))
-			object->select();
+		{
+			execute(object->select(x, y));
+			break;
+		}
 	}
 }
 
@@ -59,5 +62,15 @@ void GameObject_Manager::createObject(GameObject::ObjectID type, int x, int y)
 		case(GameObject::Terrain) :
 			_objects.push_back(new Terrain(x, y));
 			break;
+	}
+}
+
+void GameObject_Manager::execute(GameObject::ObjectID type)
+{
+	switch (type)
+	{
+	case(GameObject::ScoutItem) :
+		createObject(GameObject::Scout, 400, 500);
+		break;
 	}
 }

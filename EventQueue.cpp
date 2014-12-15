@@ -15,7 +15,6 @@ EventQueue::~EventQueue()
 bool EventQueue::eventLoop()
 {
 	SDL_Event e;
-	printf("%d", SDL_PollEvent(&e));
 	while (SDL_PollEvent(&e))
 	{
 		switch (e.type)
