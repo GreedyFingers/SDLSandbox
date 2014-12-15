@@ -14,10 +14,11 @@ EventQueue::~EventQueue()
 
 bool EventQueue::eventLoop()
 {
-	printf("%d", SDL_PollEvent(&_e));
-	while (SDL_PollEvent(&_e) == 1 && &_e != NULL)
+	SDL_Event e;
+	printf("%d", SDL_PollEvent(&e));
+	while (SDL_PollEvent(&e))
 	{
-		switch (_e.type)
+		switch (e.type)
 		{
 			case SDL_QUIT:
 				return true;

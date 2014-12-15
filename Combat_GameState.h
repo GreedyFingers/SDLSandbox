@@ -9,7 +9,7 @@ class Combat_GameState
 	InputHandler* _inputHandler;
 
 public:
-	Combat_GameState(int rw, int rh);
+	Combat_GameState();
 	~Combat_GameState();
 
 	void selectObject(int x, int y);

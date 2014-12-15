@@ -22,7 +22,7 @@ Physics::~Physics()
 void Physics::initPhysics(float rwNormalized, float rhNormalized)
 {
 	_rwNormalized = rwNormalized;
-	_rwNormalized = rhNormalized;
+	_rhNormalized = rhNormalized;
 }
 
 //Will always make character go maximum possible distance / speed

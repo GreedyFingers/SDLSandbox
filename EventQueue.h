@@ -4,7 +4,6 @@
 
 class EventQueue
 {
-	SDL_Event _e;
 	InputHandler* _inputHandler = NULL;
 
 public:

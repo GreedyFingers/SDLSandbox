@@ -11,8 +11,8 @@ void Draw::initRenderer(SDL_Window* window, Uint32 flags)
 	_renderer = SDL_CreateRenderer(window, -1, flags);
 	int rw, rh;
 	Draw::getRendererSize(&rw, &rh);
-	_rwNormalized = rw / 800.0;
-	_rhNormalized = rh / 600.0;
+	_rwNormalized = rw / 800.0f;
+	_rhNormalized = rh / 600.0f;
 	//Create renderer for window
 	if (_renderer == NULL)
 	{
@@ -51,8 +51,8 @@ bool Draw::draw(SDL_Texture *texture, int rendX, int rendY, SDL_Rect* clip)
 	if (texture == NULL || _renderer == NULL)
 		return false;
 	SDL_Rect rendR;
-	rendR.x = rendX;
-	rendR.y = rendY;
+	rendR.x = (int)(rendX*_rwNormalized);
+	rendR.y = (int)(rendY*_rhNormalized);
 	rendR.w = (int)(clip->w)*(_rwNormalized); //to resize texture on screen, these values must be changed
 	rendR.h = (int)(clip->h)*(_rhNormalized);
 	SDL_RenderCopy(_renderer, texture, clip, &rendR);

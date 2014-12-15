@@ -7,15 +7,15 @@
 #include "Terrain.h"
 #include "InputHandler.h"
 
-Combat_GameState::Combat_GameState(int rw, int rh)
+Combat_GameState::Combat_GameState()
 {
 
 	InputHandler* inputHandler = new InputHandler();
 	//Make some objects for start of game
-	Player *player = new Player(rw/2, rh - 50);
-	Scout *scout1 = new Scout((rw/5)*2, rh - 300);
-	Scout *scout2 = new Scout((rw / 5) * 3, rh - 300);
-	Scout *scout3 = new Scout((rw / 5) * 4, rh - 300);
+	Player *player = new Player(400, 550);
+	Scout *scout1 = new Scout(300, 300);
+	Scout *scout2 = new Scout(400, 300);
+	Scout *scout3 = new Scout(500, 300);
 
 	//Menus
 	UnitControl *control1 = new UnitControl(0, 0);
@@ -25,7 +25,7 @@ Combat_GameState::Combat_GameState(int rw, int rh)
 		control1->getSY() - SparkHUD_Assets::TEXTURE_H - 5);
 
 	//Terrain
-	Terrain *terrain = new Terrain((int)(rw / 4), 0);
+	Terrain *terrain = new Terrain(200, 0);
 
 	//push objects into vector
 	_objects.push_back(terrain);

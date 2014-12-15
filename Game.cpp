@@ -18,7 +18,7 @@ Game::Game()
 	Draw::getRendererSize(&rw, &rh);
 	Physics::initPhysics(Draw::getRWNormalized(), Draw::getRHNormalized());
 
-	_gameState = new Combat_GameState(rw, rh);
+	_gameState = new Combat_GameState();
 
 }
 
@@ -31,7 +31,7 @@ bool Game::gameLoop()
 {
 	bool quit = false;
 	//TODO: use same for loop that UnitControl uses
-	//quit = _eventQueue->eventLoop();
+	quit = _eventQueue->eventLoop();
 
 	_gameState->update();
 	_gameState->render();
