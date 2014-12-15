@@ -1,21 +1,17 @@
 #pragma once
-#include <vector>
-#include "GameObject.h"
 #include "InputHandler.h"
+#include "GameObject_Manager.h"
 class Combat_GameState
 {
-	//All game objects to loop through
-	std::vector<GameObject*> _objects;
+	GameObject_Manager* _objectManager;
 	InputHandler* _inputHandler;
 
 public:
 	Combat_GameState();
 	~Combat_GameState();
 
-	void selectObject(int x, int y);
-	void update();
-	void render();
-
+	GameObject_Manager* getGameObject_Manager();
 	InputHandler* getInputHandler();
+
 };
 

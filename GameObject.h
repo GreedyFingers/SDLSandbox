@@ -18,10 +18,11 @@ class GameObject
 			Player,
 			Scout,
 			UnitControl,
+			SparkHUD,
 			Terrain
 		};
 
-		static char* ObjectNames[4];
+		static char* ObjectNames[5];
 
 	private:
 		//this object's type

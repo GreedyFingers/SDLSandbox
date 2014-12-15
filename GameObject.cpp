@@ -3,10 +3,11 @@
 #include "GameObject.h"
 #include "Physics.h"
 
-char* GameObject::ObjectNames[4] = {
+char* GameObject::ObjectNames[5] = {
 	"Player",
 	"Scout",
 	"UnitControl",
+	"SparkHUD",
 	"Terrain"
 };
 

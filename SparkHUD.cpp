@@ -3,7 +3,6 @@
 #include "GameObject.h"
 #include "draw.h"
 
-
 SparkHUD::SparkHUD(int x, int y)
 {
 	init(	x,

@@ -33,8 +33,8 @@ bool Game::gameLoop()
 	//TODO: use same for loop that UnitControl uses
 	quit = _eventQueue->eventLoop();
 
-	_gameState->update();
-	_gameState->render();
+	_gameState->getGameObject_Manager()->update();
+	_gameState->getGameObject_Manager()->render();
 
 	return quit;
 }
