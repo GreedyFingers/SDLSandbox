@@ -1,0 +1,58 @@
+﻿  UnitControl_Assets.cpp
+  UnitControlItem_Assets.cpp
+  UnitControlItem.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  UnitControl.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Clock.cpp
+  Texture.cpp
+c:\users\mrl\documents\sdlsandbox\texture.cpp(46): warning C4473: 'printf' : not enough arguments passed for format string
+  c:\users\mrl\documents\sdlsandbox\texture.cpp(46): note: placeholders and their parameters expect 1 variadic arguments, but 0 were provided
+  c:\users\mrl\documents\sdlsandbox\texture.cpp(46): note: the missing variadic argument 1 is required by format string '%te'
+  Text.cpp
+  Terrain_Assets.cpp
+  Terrain.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  SparkHUD_Assets.cpp
+  SparkHUD.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Scout_Assets.cpp
+  Scout.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+c:\users\mrl\documents\sdlsandbox\scout.h(14): warning C4091: 'static ': ignored on left of 'Scout::State' when no variable is declared
+  Player.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Physics.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  main.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  GameObject.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Game.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Automotan.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  draw.cpp
+  Generating Code...
+  Compiling...
+  Character.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  PlayerAssets.cpp
+  Sprite.cpp
+  Item_Scout.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+c:\users\mrl\documents\sdlsandbox\scout.h(14): warning C4091: 'static ': ignored on left of 'Scout::State' when no variable is declared
+  InputHandler.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Global_Assets.cpp
+  GameObject_Manager.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+c:\users\mrl\documents\sdlsandbox\scout.h(14): warning C4091: 'static ': ignored on left of 'Scout::State' when no variable is declared
+  EventQueue.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Combat_GameState.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Animation.cpp
+  Generating Code...
+  SDLSandbox.vcxproj -> C:\Users\MRL\Documents\SDLSandbox\Debug\SDLSandbox.exe
+  SDLSandbox.vcxproj -> C:\Users\MRL\Documents\SDLSandbox\Debug\SDLSandbox.pdb (Full PDB)
