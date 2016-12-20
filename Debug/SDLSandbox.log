@@ -1,22 +1,23 @@
-﻿  UnitControl_Assets.cpp
-  UnitControlItem_Assets.cpp
+﻿  Automotan.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Generating Code...
+  Compiling...
+  main.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
   UnitControlItem.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
   UnitControl.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  Clock.cpp
   Texture.cpp
 c:\users\mrl\documents\sdlsandbox\texture.cpp(46): warning C4473: 'printf' : not enough arguments passed for format string
   c:\users\mrl\documents\sdlsandbox\texture.cpp(46): note: placeholders and their parameters expect 1 variadic arguments, but 0 were provided
   c:\users\mrl\documents\sdlsandbox\texture.cpp(46): note: the missing variadic argument 1 is required by format string '%te'
   Text.cpp
-  Terrain_Assets.cpp
   Terrain.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  SparkHUD_Assets.cpp
+  Sprite.cpp
   SparkHUD.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  Scout_Assets.cpp
   Scout.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
 c:\users\mrl\documents\sdlsandbox\scout.h(14): warning C4091: 'static ': ignored on left of 'Scout::State' when no variable is declared
@@ -24,35 +25,37 @@ c:\users\mrl\documents\sdlsandbox\scout.h(14): warning C4091: 'static ': ignored
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
   Physics.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  main.cpp
-c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  GameObject.cpp
-c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  Game.cpp
-c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  Automotan.cpp
-c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  draw.cpp
-  Generating Code...
-  Compiling...
-  Character.cpp
-c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  PlayerAssets.cpp
-  Sprite.cpp
   Item_Scout.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
 c:\users\mrl\documents\sdlsandbox\scout.h(14): warning C4091: 'static ': ignored on left of 'Scout::State' when no variable is declared
   InputHandler.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  Global_Assets.cpp
   GameObject_Manager.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
 c:\users\mrl\documents\sdlsandbox\scout.h(14): warning C4091: 'static ': ignored on left of 'Scout::State' when no variable is declared
+  GameObject.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
+  Game.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
   EventQueue.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
   Combat_GameState.cpp
 c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
-  Animation.cpp
+  Character.cpp
+c:\users\mrl\documents\sdlsandbox\gameobject.h(24): warning C4091: 'static ': ignored on left of 'GameObject::ObjectID' when no variable is declared
   Generating Code...
-  SDLSandbox.vcxproj -> C:\Users\MRL\Documents\SDLSandbox\Debug\SDLSandbox.exe
-  SDLSandbox.vcxproj -> C:\Users\MRL\Documents\SDLSandbox\Debug\SDLSandbox.pdb (Full PDB)
+UnitControl.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: static struct SDL_Texture * __cdecl Draw::loadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (__imp_?loadTexture@Draw@@SAPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+UnitControlItem.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: static struct SDL_Texture * __cdecl Draw::loadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (__imp_?loadTexture@Draw@@SAPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Item_Scout.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: static struct SDL_Texture * __cdecl Draw::loadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (__imp_?loadTexture@Draw@@SAPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Sprite.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: static struct SDL_Texture * __cdecl Draw::loadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (__imp_?loadTexture@Draw@@SAPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+SparkHUD.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: static struct SDL_Texture * __cdecl Draw::loadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (__imp_?loadTexture@Draw@@SAPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Terrain.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: static struct SDL_Texture * __cdecl Draw::loadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (__imp_?loadTexture@Draw@@SAPAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Game.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: static void __cdecl Draw::getRendererSize(int *,int *)" (__imp_?getRendererSize@Draw@@SAXPAH0@Z) referenced in function "public: __thiscall Game::Game(void)" (??0Game@@QAE@XZ)
+Game.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: static float __cdecl Draw::getRWNormalized(void)" (__imp_?getRWNormalized@Draw@@SAMXZ) referenced in function "public: __thiscall Game::Game(void)" (??0Game@@QAE@XZ)
+Game.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: static float __cdecl Draw::getRHNormalized(void)" (__imp_?getRHNormalized@Draw@@SAMXZ) referenced in function "public: __thiscall Game::Game(void)" (??0Game@@QAE@XZ)
+main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: static void __cdecl Draw::initRenderer(struct SDL_Window *,unsigned int)" (__imp_?initRenderer@Draw@@SAXPAUSDL_Window@@I@Z) referenced in function "bool __cdecl init(void)" (?init@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: static void __cdecl Draw::setRenderDrawColor(unsigned char,unsigned char,unsigned char,unsigned char)" (__imp_?setRenderDrawColor@Draw@@SAXEEEE@Z) referenced in function _SDL_main
+main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: static void __cdecl Draw::renderClear(void)" (__imp_?renderClear@Draw@@SAXXZ) referenced in function _SDL_main
+main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: static void __cdecl Draw::renderPresent(void)" (__imp_?renderPresent@Draw@@SAXXZ) referenced in function _SDL_main
+Texture.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: static bool __cdecl Draw::draw(struct SDL_Texture *,int,int,struct SDL_Rect *)" (__imp_?draw@Draw@@SA_NPAUSDL_Texture@@HHPAUSDL_Rect@@@Z) referenced in function "public: bool __thiscall Texture::render(int,int,int)" (?render@Texture@@QAE_NHHH@Z)
+C:\Users\MRL\Documents\SDLSandbox\Debug\SDLSandbox.exe : fatal error LNK1120: 9 unresolved externals

@@ -1,0 +1,30 @@
+﻿  Renderer.cpp
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(9): warning C4273: 'Util::Renderer::Renderer': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(39): note: see previous definition of '{ctor}'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(14): warning C4273: 'Util::Renderer::~Renderer': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(40): note: see previous definition of '{dtor}'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(20): warning C4273: 'Util::Renderer::initRenderer': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(24): note: see previous definition of 'initRenderer'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(36): warning C4273: 'Util::Renderer::loadTexture': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(25): note: see previous definition of 'loadTexture'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(60): warning C4273: 'Util::Renderer::draw': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(28): note: see previous definition of 'draw'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(74): warning C4273: 'Util::Renderer::loadText': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(26): note: see previous definition of 'loadText'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(79): warning C4273: 'Util::Renderer::setTransparentColor': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(30): note: see previous definition of 'setTransparentColor'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(88): warning C4273: 'Util::Renderer::getRendererSize': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(31): note: see previous definition of 'getRendererSize'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(93): warning C4273: 'Util::Renderer::setRenderDrawColor': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(32): note: see previous definition of 'setRenderDrawColor'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(99): warning C4273: 'Util::Renderer::renderClear': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(33): note: see previous definition of 'renderClear'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(104): warning C4273: 'Util::Renderer::renderPresent': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(34): note: see previous definition of 'renderPresent'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(109): warning C4273: 'Util::Renderer::getRWNormalized': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(36): note: see previous definition of 'getRWNormalized'
+c:\users\mrl\documents\sdlsandbox\util\renderer.cpp(114): warning C4273: 'Util::Renderer::getRHNormalized': inconsistent dll linkage
+  c:\users\mrl\documents\sdlsandbox\util\renderer.h(37): note: see previous definition of 'getRHNormalized'
+     Creating library C:\Users\MRL\Documents\SDLSandbox\Debug\Util.lib and object C:\Users\MRL\Documents\SDLSandbox\Debug\Util.exp
+  Util.vcxproj -> C:\Users\MRL\Documents\SDLSandbox\Debug\Util.dll
+  Util.vcxproj -> C:\Users\MRL\Documents\SDLSandbox\Debug\Util.pdb (Full PDB)

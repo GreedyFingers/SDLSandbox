@@ -8,8 +8,8 @@
 #include "draw.h"
 
 //Game constants
-const static int SCREEN_WIDTH = 800;
-const static int SCREEN_HEIGHT = 600;
+const static int SCREEN_WIDTH = 1200;
+const static int SCREEN_HEIGHT = 900;
 
 //SDL window handles
 SDL_Window* window = NULL;
