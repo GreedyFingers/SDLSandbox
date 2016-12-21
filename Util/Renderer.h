@@ -1,18 +1,19 @@
 #pragma once
 
-#ifdef DRAW_EX
-#define DRAW_EX __declspec(dllexport)
+#ifdef RENDERER_EX
+#define RENDERER_EX __declspec(dllexport)
 #else
-#define DRAW_EX __declspec(dllimport)
+#define RENDERER_EX __declspec(dllimport)
 #endif  
 
 #include <SDL.h>
 #include <SDL_image.h>
 #include <string>
+#include "Window.h"
 
 namespace Util
 {
-	class DRAW_EX Renderer
+	class RENDERER_EX Renderer
 	{
 
 		SDL_Renderer* _SDLRenderer;
@@ -21,7 +22,7 @@ namespace Util
 
 	public:
 
-		void initRenderer(SDL_Window* window, Uint32 flags);
+		bool initRenderer(Util::Window* window, Uint32 flags);
 		SDL_Texture* loadTexture(std::string fileName);
 		void loadText(std::string textureText, SDL_Color textColor,
 			int* sx, int* sy);

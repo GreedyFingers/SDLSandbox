@@ -16,19 +16,39 @@ namespace Util
 		_SDLRenderer = NULL;
 	}
 
-	void Renderer::initRenderer(SDL_Window* window, Uint32 flags)
+	bool Renderer::initRenderer(Util::Window* window, Uint32 flags)
 	{
-		_SDLRenderer = SDL_CreateRenderer(window, -1, flags);
+
+		_SDLRenderer = SDL_CreateRenderer(window->getSDLWindow(), -1, flags);
+
 		int rw, rh;
 		getRendererSize(&rw, &rh);
 		_rwNormalized = rw / 800.0f;
 		_rhNormalized = rh / 600.0f;
+
 		//Create renderer for window
 		if (_SDLRenderer == NULL)
 		{
 			printf("Renderer could not be created. SDL Error: %s\n", SDL_GetError());
-			//TODO: return false or something
+			return false;
 		}
+
+		//Initialize PNG loading
+		int imgFlags = IMG_INIT_PNG;
+		if (!(IMG_Init(imgFlags) & imgFlags))
+		{
+			printf("SDL_image could not initialize. SDL_image Error: %s\n", IMG_GetError());
+			return false;
+		}
+
+		//Init video
+		if (SDL_Init(SDL_INIT_VIDEO) < 0)
+		{
+			printf("SDL could not initialize. SDL_Error: %s\n", SDL_GetError());
+			return false;
+		}
+
+
 		//SDL_CreateRenderer succeeded
 	}
 

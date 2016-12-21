@@ -3,7 +3,7 @@
 #include "InputHandler.h"
 #include <stdio.h>
 
-EventQueue::EventQueue(InputHandler* inputHandler)
+EventQueue::z(InputHandler* inputHandler)
 {
 	_inputHandler = inputHandler;
 }
